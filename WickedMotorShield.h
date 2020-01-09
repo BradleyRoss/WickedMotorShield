@@ -1,3 +1,18 @@
+/** @file 
+ *  @defgroup Variables Global variables
+ *
+ *  Header file for WickedMotorShield.cpp.
+ *
+ *  Why are M1_PWM_PIN and M6_PWM_PIN defined as protected variables in the
+ *  WickedMotorShield class while the values for M2 to M5 are definitions.  Perhaps
+ *  all values should be set as protected variables with the values set by the
+ *  constructors.
+ *
+ *  Can servos, DC motors and steppers be combined using this framework.
+ *
+ *  Consider adding set_num_of_motors to set the number of motors actually being set
+ *  up.  The value should range from 0 to 6.
+ */
 /* Copyright (C) 2014 by Victor Aprea <victor.aprea@wickeddevice.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -29,19 +44,43 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #endif
 
 #include <stdint.h>
-
+/**  DIR_CWW defines counterclockwise rotation.  (Value = 0) */
 #define DIR_CCW	(0)
+/** DIR_CW defines clockwise rotation. (Value = 1) */
 #define DIR_CW  (1)
-
+/**  Integer value defining "brake off". */
 #define BRAKE_OFF  (0)
+/**
+ *  Integer value defining "brake hard".
+ */
 #define BRAKE_HARD (1)
+/**
+ *  Integer value defining "brake soft".
+ */
 #define BRAKE_SOFT (2)
-
+/**
+ * Integer value identifying motor M1.
+ */
 #define M1  (0)
+/**
+ * Integer value identifying motor M2.
+ */
 #define M2  (1)
+/**
+ *  Integer value identifying motor M3.
+ */
 #define M3  (2)
+/**
+ * Integer value identifying motor M4.
+ */
 #define M4  (3)
+/**
+ * Intger value identifying motor M5.
+ */
 #define M5  (4)
+/**
+ * Integer value identifying motor M6.
+ */
 #define M6  (5)
 
 // these bits are in shift register 1
@@ -60,12 +99,24 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #define M5_DIR_MASK    (0x20)
 #define M5_BRAKE_MASK  (0x10)
 
+/**
+ * Digital pin used for specfying speed of motor M2.
+ */
 #define M2_PWM_PIN (9)
+/**
+ *  Digital pin used for specifying speed of motor M3.
+ */
 #define M3_PWM_PIN (5)
+/**
+ * Digital pin used for specifying speed of motor M4.
+ */
 #define M4_PWM_PIN (10)
+/**
+ * Digital pin used for specifying speed of motor M5.
+ */
 #define M5_PWM_PIN (6)
 
-#define RCIN1      (1)
+#define RCIN1      (1) 
 #define RCIN2      (2)
 
 #define SERIAL_CLOCK_PIN (2)
@@ -86,22 +137,29 @@ class WickedMotorShield{
    static uint8_t RCIN2_PIN;
    static uint8_t get_rc_input_pin(uint8_t rc_input_number);
  protected:
+    /* Digital pin to be used for setting PWM (pulse width modulation) duty cycle for motor M1.
+     *
+     * Value is different for standard and alternate pins.
+     */
    static uint8_t M1_PWM_PIN;
+    /* Digital pin to be used for setting PWM (pulse width modulation) duty cycle for motor M6.
+     *
+     * Value is different for standard and alternate pins.
+     */
    static uint8_t M6_PWM_PIN;
    static uint8_t old_dir[6];
-
-   uint8_t get_shift_register_value(uint8_t motor_number);
+   uint8_t get_shift_register_value(uint8_t motor_number);   
    void apply_mask(uint8_t * shift_register_value, uint8_t mask, uint8_t operation);
-   uint8_t filter_mask(uint8_t shift_register_value, uint8_t mask);
-   void set_shift_register_value(uint8_t motor_number, uint8_t value);
-   void load_shift_register(void);
-   uint8_t get_motor_directionM(uint8_t motor_number);
-
+   uint8_t filter_mask(uint8_t shift_regsiter_value, uint8_t mask);
+   void set_shift_register_value(uint8_t motor_number, uint8_t value);       
+   void load_shift_register(void);    
+   uint8_t get_motor_directionM(uint8_t motor_number);     
+    
    void setSpeedM(uint8_t motor_number, uint8_t pwm_val);               // 0..255
    void setDirectionData(uint8_t motor_number, uint8_t direction);      // DIR_CCW, DIR_CW
-   void setBrakeData(uint8_t motor_number, uint8_t brake_type);         // BRAKE_HARD, BRAKE_SOFT, BRAKE_OFF
+   void setBrakeData(uint8_t motor_number, uint8_t brake_type);         // BRAKE_HARD, BRAKE_SOFT, BRAKE_OFF       
  public:
-   WickedMotorShield(uint8_t use_alternate_pins = 0); // defaults for arduino uno
+   WickedMotorShield(uint8_t use_alternate_pins = 0); // defaults for arduino uno                        
    static uint32_t getRCIN(uint8_t rc_input_number, uint32_t timeout = 0); // returns the result for pulseIn for the requested channel
    static uint8_t version(void);
 };
@@ -128,12 +186,29 @@ class Wicked_Stepper : public WickedMotorShield{
 
 class Wicked_DCMotor : public WickedMotorShield {
  private:
-   uint8_t get_motor_direction(void);
+   uint8_t get_motor_direction(void);  
    uint8_t motor_number;
  public:
    Wicked_DCMotor(uint8_t motor_number, uint8_t use_alternate_pins = 0);
+   /**
+    *   Set the speed of rotation as a value in the range 0..255.
+    *   @param pwm_val Value for speed with an integer in the range 0 to 255.
+    */
    void setSpeed(uint8_t pwm_val);            // 0..255
+   /**
+    *   Set the direction of rotation of the motor.
+    */
    void setDirection(uint8_t direction);      // DIR_CCW, DIR_CW
+   /**
+    *   Set the type of braking for the motor.
+    *   @param brake_type Options are BRAKE_HARD, BRAKE_SOFT, and BRAKE_OFF.
+    *
+    *   It is assumed that BRAKE_HARD refers to dynamic braking with the 
+    *   leads on the motor connected together, BRAKE_SOFT refers to the 
+    *   situation where no power flows through the motor or both leads
+    *   are connected to ground, and BRAKE_OFF refers to power being 
+    *   applied to DC motor.
+    */
    void setBrake(uint8_t brake_type);         // BRAKE_HARD, BRAKE_SOFT, BRAKE_OFF
    uint16_t currentSense(void);
 };
