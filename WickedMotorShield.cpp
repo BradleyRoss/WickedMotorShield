@@ -1,6 +1,17 @@
 /**
  *  @mainpage
  *  This is the code for the motor shield by Wicked Device.
+ *
+ *  The following are my questions about the code.
+ *  -  It is assumed that this code applies to both the MOTO4 (4 DC motors)
+ *     and MOTO6 (6 DC motors).  Is this correct, or are any modifications
+ *     required?
+ *  -  What are hard brake and soft brake?  Does hard brake refer to
+ *     dynamic braking where the leads of the DC motor are wired together?
+ *     Does the setting of the pulse width modulation (PWM pin) affect the 
+ *     percentage of the time that the leads are connected?  Does soft
+ *     brake mean that the leads to the DC motor are isolated from grounds
+ *     and voltage sources.
  *  @file
  */
 /* Copyright (C) 2014 by Victor Aprea <victor.aprea@wickeddevice.com>
@@ -174,18 +185,18 @@ uint8_t WickedMotorShield::filter_mask(uint8_t shift_regsiter_value, uint8_t mas
   if((shift_regsiter_value & mask) == 0){
     return 0;
   }
-  
+ 
   // else
   return 1;
 }
 
 uint32_t WickedMotorShield::getRCIN(uint8_t rc_input_number, uint32_t timeout){
-  
+ 
   uint8_t rc_input_pin = get_rc_input_pin(rc_input_number);
   if(rc_input_pin == 0xff){
     return 0xffffffff; //invalid RCIN number
   }
-  
+ 
   if(timeout == 0){
     return pulseIn(rc_input_pin, HIGH);
   }
@@ -485,7 +496,7 @@ void Wicked_DCMotor:: setDirection(uint8_t direction){
 // for brake_type use one of the symbols: HARD, SOFT, OFF
 void Wicked_DCMotor::setBrake(uint8_t brake_type){
   setBrakeData(motor_number, brake_type);
-  load_shift_register();  
+  load_shift_register(); 
 }
 
 uint8_t Wicked_DCMotor::get_motor_direction(void){
@@ -506,7 +517,7 @@ uint16_t Wicked_DCMotor::currentSense(void){
     return analogRead(A4);
   case M6:
     return analogRead(A5);
-  }    
+  }
   
   return 0xffff; // indicate error - bad motor_number argument
 }

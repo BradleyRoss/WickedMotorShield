@@ -1,17 +1,4 @@
 /** @file 
- *  @defgroup Variables Global variables
- *
- *  Header file for WickedMotorShield.cpp.
- *
- *  Why are M1_PWM_PIN and M6_PWM_PIN defined as protected variables in the
- *  WickedMotorShield class while the values for M2 to M5 are definitions.  Perhaps
- *  all values should be set as protected variables with the values set by the
- *  constructors.
- *
- *  Can servos, DC motors and steppers be combined using this framework.
- *
- *  Consider adding set_num_of_motors to set the number of motors actually being set
- *  up.  The value should range from 0 to 6.
  */
 /* Copyright (C) 2014 by Victor Aprea <victor.aprea@wickeddevice.com>
 
@@ -44,9 +31,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #endif
 
 #include <stdint.h>
-/**  DIR_CWW defines counterclockwise rotation.  (Value = 0) */
+/**  Integer value defining counterclockwise rotation.  (Value = 0) */
 #define DIR_CCW	(0)
-/** DIR_CW defines clockwise rotation. (Value = 1) */
+/** Integer value defining clockwise rotation. (Value = 1) */
 #define DIR_CW  (1)
 /**  Integer value defining "brake off". */
 #define BRAKE_OFF  (0)
@@ -87,6 +74,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #define M4_DIR_MASK    (0x80)
 #define M4_BRAKE_MASK  (0x40)
 #define M1_DIR_MASK    (0x20)
+/**
+ *  If M1_BRAKE_MASK bit is zero, brake
+ *  is set to BRAKE_OFF and M1_DIR_MASK bit
+ *  indicates direction of rotation.  If M1_BRAKE_MASK
+ *  bit is one, M1_DIR_MASK indicates whether hard
+ *  brake or soft brake.
+ */
 #define M1_BRAKE_MASK  (0x10)
 #define M2_DIR_MASK    (0x08)
 #define M2_BRAKE_MASK  (0x04)
