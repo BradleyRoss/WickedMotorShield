@@ -20,7 +20,3 @@
 *.out
 *.app
 
-# Directories
-html/
-latex/
-
