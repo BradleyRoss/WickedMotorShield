@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Wicked Device Motor Shield: WickedMotorShield.h File Reference</title>
+<title>Wicked Device Motor Shield: /Users/bradleyross/Projects/Git/WickedDeviceShield/WickedMotorShield.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,6 +59,10 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7a6499598ddcfcabe96e224cb4a6d834.html">Projects</a></li><li class="navelem"><a class="el" href="dir_21414c8a382c43d2d85394a631800e92.html">Git</a></li><li class="navelem"><a class="el" href="dir_3c44bfd45f2acef5a4b059fb35e1cc0c.html">WickedDeviceShield</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
@@ -276,7 +280,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If M1_BRAKE_MASK bit is zero, brake is set to BRAKE_OFF and M1_DIR_MASK bit indicates direction of rotation. If M1_BRAKE_MASK bit is one, M1_DIR_MASK indicates whether hard brake or soft brake. </p>
+<p>If M1_BRAKE_MASK bit is zero, brake is set to BRAKE_OFF and M1_DIR_MASK bit indicates direction of rotation (Bit is set for <a class="el" href="_wicked_motor_shield_8h.html#a32aebb0062f8833d08b204b072721245">DIR_CW</a> and cleared for <a class="el" href="_wicked_motor_shield_8h.html#a6d4cfbbc36469e74e77804b0c3c9d0ba">DIR_CCW</a>). If M1_BRAKE_MASK bit is one, M1_DIR_MASK indicates whether hard brake (direction bit is set) or soft brake (direction bit is cleared).</p>
+<p>This means that clearing the brake bit (location indicated by M1_BRAKE_MASK) means that the direction bit (indicated by M1_DIR_MASK ) must be reloaded using the value of #old_dir .</p>
+<p>When setting the brake bit (location indicated by M1_BRAKE_BIT ), the value of the direction bit must be copied to #old_dir . </p>
 
 </div>
 </div>

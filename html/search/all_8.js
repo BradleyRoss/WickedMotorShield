@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wickedmotorshield_31',['WickedMotorShield',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['wickedmotorshield_31',['WickedMotorShield',['../md___users_bradleyross__projects__git__wicked_device_shield__r_e_a_d_m_e.html',1,'']]],
   ['wicked_5fdcmotor_32',['Wicked_DCMotor',['../class_wicked___d_c_motor.html',1,'']]],
   ['wicked_5fstepper_33',['Wicked_Stepper',['../class_wicked___stepper.html',1,'']]],
   ['wickedmotorshield_34',['WickedMotorShield',['../class_wicked_motor_shield.html',1,'']]],
