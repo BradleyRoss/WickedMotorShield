@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['wickedmotorshield_31',['WickedMotorShield',['../md___users_bradleyross__projects__git__wicked_device_shield__r_e_a_d_m_e.html',1,'']]],
-  ['wicked_5fdcmotor_32',['Wicked_DCMotor',['../class_wicked___d_c_motor.html',1,'']]],
-  ['wicked_5fstepper_33',['Wicked_Stepper',['../class_wicked___stepper.html',1,'']]],
-  ['wickedmotorshield_34',['WickedMotorShield',['../class_wicked_motor_shield.html',1,'']]],
-  ['wickedmotorshield_2ecpp_35',['WickedMotorShield.cpp',['../_wicked_motor_shield_8cpp.html',1,'']]],
-  ['wickedmotorshield_2eh_36',['WickedMotorShield.h',['../_wicked_motor_shield_8h.html',1,'']]]
+  ['old_5fdir_36',['old_dir',['../class_wicked_motor_shield.html#aac68eff7dd860f3811be0f290d70c0bc',1,'WickedMotorShield']]],
+  ['operation_5fclear_37',['OPERATION_CLEAR',['../_wicked_motor_shield_8cpp.html#a50eee01a64ad4268daea5d750482551d',1,'OPERATION_CLEAR():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a50eee01a64ad4268daea5d750482551d',1,'OPERATION_CLEAR():&#160;WickedMotorShield.h']]],
+  ['operation_5fnone_38',['OPERATION_NONE',['../_wicked_motor_shield_8cpp.html#a1d4650e822071c3fce70378585389e46',1,'OPERATION_NONE():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a1d4650e822071c3fce70378585389e46',1,'OPERATION_NONE():&#160;WickedMotorShield.h']]],
+  ['operation_5fset_39',['OPERATION_SET',['../_wicked_motor_shield_8cpp.html#a6985462298d759f9638ad79bda646658',1,'OPERATION_SET():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a6985462298d759f9638ad79bda646658',1,'OPERATION_SET():&#160;WickedMotorShield.h']]]
 ];
