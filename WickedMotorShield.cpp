@@ -12,6 +12,12 @@
  *     percentage of the time that the leads are connected?  Does soft
  *     brake mean that the leads to the DC motor are isolated from grounds
  *     and voltage sources.
+ *  -  In Wicked_DCMotor#setBrake(), the value of the previous value of
+ *     the direction bit should be copied to Wicked_DCMotor#old_dir only
+ *     if the brake bit was previously clear (indicating BRAKE_OFF) and the BRAKE_HARD or 
+ *     BRAKE_SOFT condition is the new brake condition.  It appears that the
+ *     Wicked_DCMotor#old_dir value is currently updated if going from 
+ *     BRAKE_SOFT to BRAKE_HARD or from BRAKE_HARD to BRAKE_SOFT.
  *  @file
  */
 /* Copyright (C) 2014 by Victor Aprea <victor.aprea@wickeddevice.com>
