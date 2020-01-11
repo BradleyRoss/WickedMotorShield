@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['serial_5fclock_5fpin_73',['SERIAL_CLOCK_PIN',['../_wicked_motor_shield_8cpp.html#aba3b3ba52d33a415d6664f570814891c',1,'WickedMotorShield.cpp']]],
-  ['serial_5flatch_5fpin_74',['SERIAL_LATCH_PIN',['../_wicked_motor_shield_8cpp.html#a7a57131e103c79d8987697fbcfcb093f',1,'WickedMotorShield.cpp']]]
+  ['operation_5fclear_116',['OPERATION_CLEAR',['../_wicked_motor_shield_8cpp.html#a50eee01a64ad4268daea5d750482551d',1,'OPERATION_CLEAR():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a50eee01a64ad4268daea5d750482551d',1,'OPERATION_CLEAR():&#160;WickedMotorShield.h']]],
+  ['operation_5fnone_117',['OPERATION_NONE',['../_wicked_motor_shield_8cpp.html#a1d4650e822071c3fce70378585389e46',1,'OPERATION_NONE():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a1d4650e822071c3fce70378585389e46',1,'OPERATION_NONE():&#160;WickedMotorShield.h']]],
+  ['operation_5fset_118',['OPERATION_SET',['../_wicked_motor_shield_8cpp.html#a6985462298d759f9638ad79bda646658',1,'OPERATION_SET():&#160;WickedMotorShield.cpp'],['../_wicked_motor_shield_8h.html#a6985462298d759f9638ad79bda646658',1,'OPERATION_SET():&#160;WickedMotorShield.h']]]
 ];

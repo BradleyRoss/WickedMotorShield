@@ -1,5 +1,9 @@
 \hypertarget{class_wicked___d_c_motor}{}\doxysection{Wicked\+\_\+\+D\+C\+Motor Class Reference}
 \label{class_wicked___d_c_motor}\index{Wicked\_DCMotor@{Wicked\_DCMotor}}
+
+
+{\ttfamily \#include $<$Wicked\+Motor\+Shield.\+h$>$}
+
 Inheritance diagram for Wicked\+\_\+\+D\+C\+Motor\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,8 +13,7 @@ Inheritance diagram for Wicked\+\_\+\+D\+C\+Motor\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_wicked___d_c_motor_a146a126614ef3ba37ac74314ed4776d0}\label{class_wicked___d_c_motor_a146a126614ef3ba37ac74314ed4776d0}} 
-{\bfseries Wicked\+\_\+\+D\+C\+Motor} (uint8\+\_\+t motor\+\_\+number, uint8\+\_\+t use\+\_\+alternate\+\_\+pins=0)
+\mbox{\hyperlink{class_wicked___d_c_motor_a146a126614ef3ba37ac74314ed4776d0}{Wicked\+\_\+\+D\+C\+Motor}} (uint8\+\_\+t motor\+\_\+number, uint8\+\_\+t use\+\_\+alternate\+\_\+pins=0)
 \item 
 void \mbox{\hyperlink{class_wicked___d_c_motor_a19b9964c24ac43d18c97819bc177360e}{set\+Speed}} (uint8\+\_\+t pwm\+\_\+val)
 \item 
@@ -18,13 +21,42 @@ void \mbox{\hyperlink{class_wicked___d_c_motor_acb4ae19523f5d19759a18fdd17055b45
 \item 
 void \mbox{\hyperlink{class_wicked___d_c_motor_a39e60ca4084d3134ec693815fe2154e1}{set\+Brake}} (uint8\+\_\+t brake\+\_\+type)
 \item 
-\mbox{\Hypertarget{class_wicked___d_c_motor_a70c400496183f21c03b635882ede28d3}\label{class_wicked___d_c_motor_a70c400496183f21c03b635882ede28d3}} 
-uint16\+\_\+t {\bfseries current\+Sense} (void)
+uint16\+\_\+t \mbox{\hyperlink{class_wicked___d_c_motor_a70c400496183f21c03b635882ede28d3}{current\+Sense}} (void)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line 181 of file Wicked\+Motor\+Shield.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wicked___d_c_motor_a146a126614ef3ba37ac74314ed4776d0}\label{class_wicked___d_c_motor_a146a126614ef3ba37ac74314ed4776d0}} 
+\index{Wicked\_DCMotor@{Wicked\_DCMotor}!Wicked\_DCMotor@{Wicked\_DCMotor}}
+\index{Wicked\_DCMotor@{Wicked\_DCMotor}!Wicked\_DCMotor@{Wicked\_DCMotor}}
+\doxysubsubsection{\texorpdfstring{Wicked\_DCMotor()}{Wicked\_DCMotor()}}
+{\footnotesize\ttfamily Wicked\+\_\+\+D\+C\+Motor\+::\+Wicked\+\_\+\+D\+C\+Motor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number,  }\item[{uint8\+\_\+t}]{use\+\_\+alternate\+\_\+pins = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 499 of file Wicked\+Motor\+Shield.\+cpp.
+
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wicked___d_c_motor_a70c400496183f21c03b635882ede28d3}\label{class_wicked___d_c_motor_a70c400496183f21c03b635882ede28d3}} 
+\index{Wicked\_DCMotor@{Wicked\_DCMotor}!currentSense@{currentSense}}
+\index{currentSense@{currentSense}!Wicked\_DCMotor@{Wicked\_DCMotor}}
+\doxysubsubsection{\texorpdfstring{currentSense()}{currentSense()}}
+{\footnotesize\ttfamily uint16\+\_\+t Wicked\+\_\+\+D\+C\+Motor\+::current\+Sense (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 521 of file Wicked\+Motor\+Shield.\+cpp.
+
 \mbox{\Hypertarget{class_wicked___d_c_motor_a39e60ca4084d3134ec693815fe2154e1}\label{class_wicked___d_c_motor_a39e60ca4084d3134ec693815fe2154e1}} 
 \index{Wicked\_DCMotor@{Wicked\_DCMotor}!setBrake@{setBrake}}
 \index{setBrake@{setBrake}!Wicked\_DCMotor@{Wicked\_DCMotor}}
@@ -36,13 +68,21 @@ Set the type of braking for the motor.
 {\em brake\+\_\+type} & Options are B\+R\+A\+K\+E\+\_\+\+H\+A\+RD, B\+R\+A\+K\+E\+\_\+\+S\+O\+FT, and B\+R\+A\+K\+E\+\_\+\+O\+FF.\\
 \hline
 \end{DoxyParams}
-It is assumed that B\+R\+A\+K\+E\+\_\+\+H\+A\+RD refers to dynamic braking with the leads on the motor connected together, B\+R\+A\+K\+E\+\_\+\+S\+O\+FT refers to the situation where no power flows through the motor or both leads are connected to ground, and B\+R\+A\+K\+E\+\_\+\+O\+FF refers to power being applied to DC motor. \mbox{\Hypertarget{class_wicked___d_c_motor_acb4ae19523f5d19759a18fdd17055b45}\label{class_wicked___d_c_motor_acb4ae19523f5d19759a18fdd17055b45}} 
+It is assumed that B\+R\+A\+K\+E\+\_\+\+H\+A\+RD refers to dynamic braking with the leads on the motor connected together, B\+R\+A\+K\+E\+\_\+\+S\+O\+FT refers to the situation where no power flows through the motor or both leads are connected to ground, and B\+R\+A\+K\+E\+\_\+\+O\+FF refers to power being applied to DC motor. 
+
+Definition at line 512 of file Wicked\+Motor\+Shield.\+cpp.
+
+\mbox{\Hypertarget{class_wicked___d_c_motor_acb4ae19523f5d19759a18fdd17055b45}\label{class_wicked___d_c_motor_acb4ae19523f5d19759a18fdd17055b45}} 
 \index{Wicked\_DCMotor@{Wicked\_DCMotor}!setDirection@{setDirection}}
 \index{setDirection@{setDirection}!Wicked\_DCMotor@{Wicked\_DCMotor}}
 \doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
 {\footnotesize\ttfamily void Wicked\+\_\+\+D\+C\+Motor\+::set\+Direction (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{direction }\end{DoxyParamCaption})}
 
-Set the direction of rotation of the motor. \mbox{\Hypertarget{class_wicked___d_c_motor_a19b9964c24ac43d18c97819bc177360e}\label{class_wicked___d_c_motor_a19b9964c24ac43d18c97819bc177360e}} 
+Set the direction of rotation of the motor. 
+
+Definition at line 506 of file Wicked\+Motor\+Shield.\+cpp.
+
+\mbox{\Hypertarget{class_wicked___d_c_motor_a19b9964c24ac43d18c97819bc177360e}\label{class_wicked___d_c_motor_a19b9964c24ac43d18c97819bc177360e}} 
 \index{Wicked\_DCMotor@{Wicked\_DCMotor}!setSpeed@{setSpeed}}
 \index{setSpeed@{setSpeed}!Wicked\_DCMotor@{Wicked\_DCMotor}}
 \doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
@@ -53,6 +93,10 @@ Set the speed of rotation as a value in the range 0..255.
 {\em pwm\+\_\+val} & Value for speed with an integer in the range 0 to 255. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 540 of file Wicked\+Motor\+Shield.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

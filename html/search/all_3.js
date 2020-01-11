@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fmotor_5fdirectionm_6',['get_motor_directionM',['../class_wicked_motor_shield.html#a8c0a083ea51c8c82efd9a96743e14724',1,'WickedMotorShield']]],
-  ['get_5fshift_5fregister_5fvalue_7',['get_shift_register_value',['../class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff',1,'WickedMotorShield']]]
+  ['dir_5fccw_5',['DIR_CCW',['../_wicked_motor_shield_8h.html#a6d4cfbbc36469e74e77804b0c3c9d0ba',1,'WickedMotorShield.h']]],
+  ['dir_5fcw_6',['DIR_CW',['../_wicked_motor_shield_8h.html#a32aebb0062f8833d08b204b072721245',1,'WickedMotorShield.h']]]
 ];
