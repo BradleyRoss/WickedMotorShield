@@ -13,10 +13,10 @@
  *     brake mean that the leads to the DC motor are isolated from grounds
  *     and voltage sources.
  *  -  In Wicked_DCMotor#setBrake(), the value of the previous value of
- *     the direction bit should be copied to Wicked_DCMotor#old_dir only
+ *     the direction bit should be copied to WickedMotorShield#old_dir only
  *     if the brake bit was previously clear (indicating BRAKE_OFF) and the BRAKE_HARD or 
  *     BRAKE_SOFT condition is the new brake condition.  It appears that the
- *     Wicked_DCMotor#old_dir value is currently updated if going from 
+ *     WickedMotorShield#old_dir value is currently updated if going from 
  *     BRAKE_SOFT to BRAKE_HARD or from BRAKE_HARD to BRAKE_SOFT.
  *  @file
  */
@@ -86,7 +86,16 @@ uint8_t WickedMotorShield::M1_PWM_PIN = 11;
  *
  *  Pin 3 for standard pins, pin 4 for alternate pins.
  */
-uint8_t WickedMotorShield::M6_PWM_PIN = 3; 
+uint8_t WickedMotorShield::M6_PWM_PIN = 3;
+/**
+ *  Contains the old value of the direction bit if the
+ *  value of the brake bit is changed from 0 to 1.  
+ *
+ *  When the brake bit is changed from 0 to 1, the
+ *  direction bit indicates whether it is BRAKE_SOFT or
+ *  BRAKE_HARD.  If the direction bit wasn't copied to
+ *  this array, the value would be lost.
+ */ 
 uint8_t WickedMotorShield::old_dir[6] = {0,0,0,0,0,0};
 
 
