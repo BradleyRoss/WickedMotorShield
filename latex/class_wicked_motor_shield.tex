@@ -50,8 +50,7 @@ static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_acd10647e9753c734
 \item 
 static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_acc05c20236dc67a0979f7e0c66c3b7e8}{M6\+\_\+\+P\+W\+M\+\_\+\+P\+IN}} = 3
 \item 
-\mbox{\Hypertarget{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}\label{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}} 
-static uint8\+\_\+t {\bfseries old\+\_\+dir} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}{old\+\_\+dir}} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
 \end{DoxyCompactItemize}
 
 
@@ -119,9 +118,7 @@ Copy the shift register data for the specified motor into the correct data struc
 \doxysubsubsection{\texorpdfstring{setBrakeData()}{setBrakeData()}}
 {\footnotesize\ttfamily void Wicked\+Motor\+Shield\+::set\+Brake\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number,  }\item[{uint8\+\_\+t}]{brake\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Set the contents of the shift\+\_\+registers to indicate the desired brake condition.
-
-What should happen when going from B\+R\+A\+K\+E\+\_\+\+H\+A\+RD to B\+R\+A\+K\+E\+\_\+\+S\+O\+FT or from B\+R\+A\+K\+E\+\_\+\+S\+O\+FT to B\+R\+A\+K\+E\+\_\+\+H\+A\+RD. In this case, the value of old\+\_\+dir should not be changed. old\+\_\+dir should only be changed if going from B\+R\+A\+K\+E\+\_\+\+O\+FF to B\+R\+A\+K\+E\+\_\+\+S\+O\+FT or B\+R\+A\+K\+E\+\_\+\+H\+A\+RD. \mbox{\Hypertarget{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}\label{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}} 
+Set the contents of the shift\+\_\+registers to indicate the desired brake condition. \mbox{\Hypertarget{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}\label{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}} 
 \index{WickedMotorShield@{WickedMotorShield}!setDirectionData@{setDirectionData}}
 \index{setDirectionData@{setDirectionData}!WickedMotorShield@{WickedMotorShield}}
 \doxysubsubsection{\texorpdfstring{setDirectionData()}{setDirectionData()}}
@@ -152,9 +149,18 @@ Pin 11 for standard pins, use pin 8 for alternate pins. \mbox{\Hypertarget{class
 
 Digital pin for M6 P\+WM (pulse width modulation).
 
-Pin 3 for standard pins, pin 4 for alternate pins. 
+Pin 3 for standard pins, pin 4 for alternate pins. \mbox{\Hypertarget{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}\label{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}} 
+\index{WickedMotorShield@{WickedMotorShield}!old\_dir@{old\_dir}}
+\index{old\_dir@{old\_dir}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{old\_dir}{old\_dir}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::old\+\_\+dir = \{0,0,0,0,0,0\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Contains the old value of the direction bit if the value of the brake bit is changed from 0 to 1. ~\newline
+
+
+When the brake bit is changed from 0 to 1, the direction bit indicates whether it is B\+R\+A\+K\+E\+\_\+\+S\+O\+FT or B\+R\+A\+K\+E\+\_\+\+H\+A\+RD. If the direction bit wasn\textquotesingle{}t copied to this array, the value would be lost. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/bradleyross/\+Projects/\+Git/\+Wicked\+Device\+Shield/\mbox{\hyperlink{_wicked_motor_shield_8h}{Wicked\+Motor\+Shield.\+h}}\item 
-/\+Users/bradleyross/\+Projects/\+Git/\+Wicked\+Device\+Shield/\mbox{\hyperlink{_wicked_motor_shield_8cpp}{Wicked\+Motor\+Shield.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_wicked_motor_shield_8h}{Wicked\+Motor\+Shield.\+h}}\item 
+\mbox{\hyperlink{_wicked_motor_shield_8cpp}{Wicked\+Motor\+Shield.\+cpp}}\end{DoxyCompactItemize}

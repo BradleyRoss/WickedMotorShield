@@ -68,7 +68,8 @@ $(function() {
 <div class="textblock"><p>This is the code for the motor shield by Wicked Device.</p>
 <p>The following are my questions about the code.</p><ul>
 <li>It is assumed that this code applies to both the MOTO4 (4 DC motors) and MOTO6 (6 DC motors). Is this correct, or are any modifications required?</li>
-<li>What are hard brake and soft brake? Does hard brake refer to dynamic braking where the leads of the DC motor are wired together? Does the setting of the pulse width modulation (PWM pin) affect the percentage of the time that the leads are connected? Does soft brake mean that the leads to the DC motor are isolated from grounds and voltage sources. </li>
+<li>What are hard brake and soft brake? Does hard brake refer to dynamic braking where the leads of the DC motor are wired together? Does the setting of the pulse width modulation (PWM pin) affect the percentage of the time that the leads are connected? Does soft brake mean that the leads to the DC motor are isolated from grounds and voltage sources.</li>
+<li>In <a class="el" href="class_wicked___d_c_motor.html#a39e60ca4084d3134ec693815fe2154e1">Wicked_DCMotor::setBrake()</a>, the value of the previous value of the direction bit should be copied to <a class="el" href="class_wicked_motor_shield.html#aac68eff7dd860f3811be0f290d70c0bc">WickedMotorShield::old_dir</a> only if the brake bit was previously clear (indicating BRAKE_OFF) and the BRAKE_HARD or BRAKE_SOFT condition is the new brake condition. It appears that the <a class="el" href="class_wicked_motor_shield.html#aac68eff7dd860f3811be0f290d70c0bc">WickedMotorShield::old_dir</a> value is currently updated if going from BRAKE_SOFT to BRAKE_HARD or from BRAKE_HARD to BRAKE_SOFT. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

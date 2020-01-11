@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_5fshift_5fregister_11',['load_shift_register',['../class_wicked_motor_shield.html#a94cee42254233ed301b3e6ccb7ba0b2c',1,'WickedMotorShield']]]
+  ['old_5fdir_22',['old_dir',['../class_wicked_motor_shield.html#aac68eff7dd860f3811be0f290d70c0bc',1,'WickedMotorShield']]]
 ];

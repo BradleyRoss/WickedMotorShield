@@ -1,5 +1,5 @@
-\hypertarget{_wicked_motor_shield_8h}{}\doxysection{/\+Users/bradleyross/\+Projects/\+Git/\+Wicked\+Device\+Shield/\+Wicked\+Motor\+Shield.h File Reference}
-\label{_wicked_motor_shield_8h}\index{/Users/bradleyross/Projects/Git/WickedDeviceShield/WickedMotorShield.h@{/Users/bradleyross/Projects/Git/WickedDeviceShield/WickedMotorShield.h}}
+\hypertarget{_wicked_motor_shield_8h}{}\doxysection{Wicked\+Motor\+Shield.\+h File Reference}
+\label{_wicked_motor_shield_8h}\index{WickedMotorShield.h@{WickedMotorShield.h}}
 {\ttfamily \#include $<$W\+Program.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 \doxysubsection*{Classes}
@@ -148,11 +148,7 @@ Integer value identifying motor M1. \mbox{\Hypertarget{_wicked_motor_shield_8h_a
 \doxysubsubsection{\texorpdfstring{M1\_BRAKE\_MASK}{M1\_BRAKE\_MASK}}
 {\footnotesize\ttfamily \#define M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x10)}
 
-If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is zero, brake is set to B\+R\+A\+K\+E\+\_\+\+O\+FF and M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK bit indicates direction of rotation (Bit is set for \mbox{\hyperlink{_wicked_motor_shield_8h_a32aebb0062f8833d08b204b072721245}{D\+I\+R\+\_\+\+CW}} and cleared for \mbox{\hyperlink{_wicked_motor_shield_8h_a6d4cfbbc36469e74e77804b0c3c9d0ba}{D\+I\+R\+\_\+\+C\+CW}}). If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is one, M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK indicates whether hard brake (direction bit is set) or soft brake (direction bit is cleared).
-
-This means that clearing the brake bit (location indicated by M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK) means that the direction bit (indicated by M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK ) must be reloaded using the value of \#old\+\_\+dir .
-
-When setting the brake bit (location indicated by M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+B\+IT ), the value of the direction bit must be copied to \#old\+\_\+dir . \mbox{\Hypertarget{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}\label{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}} 
+If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is zero, brake is set to B\+R\+A\+K\+E\+\_\+\+O\+FF and M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK bit indicates direction of rotation. If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is one, M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK indicates whether hard brake or soft brake. \mbox{\Hypertarget{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}\label{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}} 
 \index{WickedMotorShield.h@{WickedMotorShield.h}!M2@{M2}}
 \index{M2@{M2}!WickedMotorShield.h@{WickedMotorShield.h}}
 \doxysubsubsection{\texorpdfstring{M2}{M2}}
