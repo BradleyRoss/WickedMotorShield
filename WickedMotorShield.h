@@ -71,26 +71,98 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
 #define M6  (5)
 
 // these bits are in shift register 1
+/**
+ * Shows location of bit for direction status of motor #M4 in 
+ *   WickedMotorShield#shift_register_1.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M4_DIR_MASK    (0x80)
+/**
+ * Shows location of bit for brake status of motor #M4 in 
+ *   WickedMotorShield#shift_register_1.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M4_BRAKE_MASK  (0x40)
+/**
+ * Shows location of bit for brake status for motor #M1 in
+ * WickedMotorShield#first_shift_register.
+ *
+ * See #M1_BRAKE_MASK
+ */
 #define M1_DIR_MASK    (0x20)
 /**
+ * Shows location of bit for brake status of motor #M1 in 
+ *   WickedMotorShield#first_shift_register.
+ *
  *  If M1_BRAKE_MASK bit is zero, brake
  *  is set to BRAKE_OFF and M1_DIR_MASK bit
  *  indicates direction of rotation.  If M1_BRAKE_MASK
  *  bit is one, M1_DIR_MASK indicates whether hard
  *  brake or soft brake.
+ * 
+ *  There are equivalent macro definitions BRAKE_MASK and
+ *  DIR_MASK for the other motors (M2, M3, M4, M5, M6).
  */
 #define M1_BRAKE_MASK  (0x10)
+/**
+ * Shows location of bit for direction status of motor #M2 in 
+ *   WickedMotorShield#first_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M2_DIR_MASK    (0x08)
+/**
+ * Shows location of bit for brake status of motor #M2 in 
+ *   WickedMotorShield#first_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M2_BRAKE_MASK  (0x04)
+/**
+ * Shows location of bit for direction status of motor #M3 in 
+ *   WickedMotorShield#first_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M3_DIR_MASK    (0x02)
+/**
+ * Shows location of bit for brake status of motor #M3 in 
+ *   WickedMotorShield#first_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M3_BRAKE_MASK  (0x01)
 
 // these bits are in shift register 2
+/**
+ * Shows location of bit for direction status of motor #M6 in 
+ *   WickedMotorShield#second_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M6_DIR_MASK    (0x80)
+/**
+ * Shows location of bit for brake status of motor #M6 in 
+ *   WickedMotorShield#second_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M6_BRAKE_MASK  (0x40)
+/**
+ * Shows location of bit for direction status of motor #M5 in 
+ *   WickedMotorShield#second_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M5_DIR_MASK    (0x20)
+/**
+ * Shows location of bit for brake status of motor #M5 in 
+ *   WickedMotorShield#second_shift_register.
+ *
+ * See #M1_DIR_MASK and #M1_BRAKE_MASK for more information.
+ */
 #define M5_BRAKE_MASK  (0x10)
 
 /**
@@ -144,10 +216,11 @@ class WickedMotorShield{
    static uint8_t old_dir[6];
    uint8_t get_shift_register_value(uint8_t motor_number);   
    void apply_mask(uint8_t * shift_register_value, uint8_t mask, uint8_t operation);
-   uint8_t filter_mask(uint8_t shift_regsiter_value, uint8_t mask);
+   uint8_t filter_mask(uint8_t shift_register_value, uint8_t mask);
    void set_shift_register_value(uint8_t motor_number, uint8_t value);       
    void load_shift_register(void);    
    uint8_t get_motor_directionM(uint8_t motor_number);     
+   uint8_t get_motor_brakeM(uint8_t motor_number);     
     
    void setSpeedM(uint8_t motor_number, uint8_t pwm_val);               // 0..255
    void setDirectionData(uint8_t motor_number, uint8_t direction);      // DIR_CCW, DIR_CW
