@@ -29,13 +29,15 @@ uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_ad676ad895cba921bdba6274
 \item 
 void \mbox{\hyperlink{class_wicked_motor_shield_abbe45be72eddd30505401af152e44609}{apply\+\_\+mask}} (uint8\+\_\+t $\ast$shift\+\_\+register\+\_\+value, uint8\+\_\+t mask, uint8\+\_\+t operation)
 \item 
-uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a1cff3b2d25e39ae878f896c4c475d5f1}{filter\+\_\+mask}} (uint8\+\_\+t shift\+\_\+regsiter\+\_\+value, uint8\+\_\+t mask)
+uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a16f3a1c934021dd75f80c0d4e075c59b}{filter\+\_\+mask}} (uint8\+\_\+t shift\+\_\+register\+\_\+value, uint8\+\_\+t mask)
 \item 
 void \mbox{\hyperlink{class_wicked_motor_shield_a0b92205bb3dede76817a6d52d54cc078}{set\+\_\+shift\+\_\+register\+\_\+value}} (uint8\+\_\+t motor\+\_\+number, uint8\+\_\+t value)
 \item 
 void \mbox{\hyperlink{class_wicked_motor_shield_a94cee42254233ed301b3e6ccb7ba0b2c}{load\+\_\+shift\+\_\+register}} (void)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a8c0a083ea51c8c82efd9a96743e14724}{get\+\_\+motor\+\_\+directionM}} (uint8\+\_\+t motor\+\_\+number)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a2927f708ec576c8e66fc08500d4e682a}{get\+\_\+motor\+\_\+brakeM}} (uint8\+\_\+t motor\+\_\+number)
 \item 
 void \mbox{\hyperlink{class_wicked_motor_shield_ad78f766721ebe540389b823de2404f9e}{set\+SpeedM}} (uint8\+\_\+t motor\+\_\+number, uint8\+\_\+t pwm\+\_\+val)
 \item 
@@ -52,12 +54,30 @@ static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_acc05c20236dc67a0
 \item 
 static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}{old\+\_\+dir}} \mbox{[}6\mbox{]} = \{0,0,0,0,0,0\}
 \end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a323ebd2491e704b5cadd90513e100125}{get\+\_\+rc\+\_\+input\+\_\+pin}} (uint8\+\_\+t rc\+\_\+input\+\_\+number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{first\+\_\+shift\+\_\+register}} = 0xff
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}{second\+\_\+shift\+\_\+register}} = 0xff
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_af195d531882a8b073d0e715eb8a4b054}{S\+E\+R\+I\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+P\+IN}} = 12
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_ab5842957bce402c5926d63d898b5eef7}{R\+C\+I\+N1\+\_\+\+P\+IN}} = 4
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{class_wicked_motor_shield_a693ed5a373f9c93516d53905d85c8fcc}{R\+C\+I\+N2\+\_\+\+P\+IN}} = 8
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line 125 of file Wicked\+Motor\+Shield.\+h.
+Definition at line 197 of file Wicked\+Motor\+Shield.\+h.
 
 
 
@@ -70,7 +90,7 @@ Definition at line 125 of file Wicked\+Motor\+Shield.\+h.
 
 
 
-Definition at line 102 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 109 of file Wicked\+Motor\+Shield.\+cpp.
 
 
 
@@ -81,30 +101,58 @@ Definition at line 102 of file Wicked\+Motor\+Shield.\+cpp.
 \doxysubsubsection{\texorpdfstring{apply\_mask()}{apply\_mask()}}
 {\footnotesize\ttfamily void Wicked\+Motor\+Shield\+::apply\+\_\+mask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{shift\+\_\+register\+\_\+value,  }\item[{uint8\+\_\+t}]{mask,  }\item[{uint8\+\_\+t}]{operation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Carry out bitwise or/and operation operation. 
+Carry out bitwise or/and operation . 
 \begin{DoxyParams}{Parameters}
-{\em shift\+\_\+register\+\_\+value} & Address of shift register to be altered \\
+{\em shift\+\_\+register\+\_\+value} & Address of shift register to be altered. This will be the address of either Wicked\+Device\+Shield\+::first\+\_\+shift\+\_\+register or Wicked\+Device\+Shield\+::second\+\_\+shift\+\_\+register. Only the bit whose location is given by the mask parameter will be altered. \\
 \hline
 {\em mask} & with bit set in position to be changed. \\
 \hline
-{\em operation} & flag indicating whether bit to be set or cleared\\
+{\em operation} & flag indicating whether bit to be set (\mbox{\hyperlink{_wicked_motor_shield_8h_a6985462298d759f9638ad79bda646658}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET}}) or cleared (\mbox{\hyperlink{_wicked_motor_shield_8h_a50eee01a64ad4268daea5d750482551d}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+C\+L\+E\+AR}}). A value of \mbox{\hyperlink{_wicked_motor_shield_8h_a1d4650e822071c3fce70378585389e46}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+NE}} indicates that no action is to be taken.\\
 \hline
 \end{DoxyParams}
 If operation clear do a bitwise and operation on the shift register byte and the mask with all bits inverted. In the inverted mask, the bit to be cleared is 0 and the other bits are 1.
 
 If operation set do a bitwise or operation on the shift register byte and the mask. The mask has a one in the bit of the shift register to be set to be set. 
 
-Definition at line 185 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 197 of file Wicked\+Motor\+Shield.\+cpp.
 
-\mbox{\Hypertarget{class_wicked_motor_shield_a1cff3b2d25e39ae878f896c4c475d5f1}\label{class_wicked_motor_shield_a1cff3b2d25e39ae878f896c4c475d5f1}} 
+\mbox{\Hypertarget{class_wicked_motor_shield_a16f3a1c934021dd75f80c0d4e075c59b}\label{class_wicked_motor_shield_a16f3a1c934021dd75f80c0d4e075c59b}} 
 \index{WickedMotorShield@{WickedMotorShield}!filter\_mask@{filter\_mask}}
 \index{filter\_mask@{filter\_mask}!WickedMotorShield@{WickedMotorShield}}
 \doxysubsubsection{\texorpdfstring{filter\_mask()}{filter\_mask()}}
-{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::filter\+\_\+mask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{shift\+\_\+regsiter\+\_\+value,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::filter\+\_\+mask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{shift\+\_\+register\+\_\+value,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Apply a mask to an eight bit integer using bitwise and. 
+\begin{DoxyParams}{Parameters}
+{\em shift\+\_\+register\+\_\+value} & byte to which mask is to be applied \\
+\hline
+{\em mask} & byte containing mask to be applied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if bit indicated by mask is 0, otherwise return 1 
+\end{DoxyReturn}
 
 
+Definition at line 216 of file Wicked\+Motor\+Shield.\+cpp.
 
-Definition at line 199 of file Wicked\+Motor\+Shield.\+cpp.
+\mbox{\Hypertarget{class_wicked_motor_shield_a2927f708ec576c8e66fc08500d4e682a}\label{class_wicked_motor_shield_a2927f708ec576c8e66fc08500d4e682a}} 
+\index{WickedMotorShield@{WickedMotorShield}!get\_motor\_brakeM@{get\_motor\_brakeM}}
+\index{get\_motor\_brakeM@{get\_motor\_brakeM}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{get\_motor\_brakeM()}{get\_motor\_brakeM()}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::get\+\_\+motor\+\_\+brakeM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Return motor brake status for a specific motor. 
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+number} & integer representing motor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shift register value for motor having done a bitwise and operation with the brake mask for the motor. This will be zero if the brake bit is not set and greater than zero if the brake bit is set. 
+\end{DoxyReturn}
+
+
+Definition at line 449 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a8c0a083ea51c8c82efd9a96743e14724}\label{class_wicked_motor_shield_a8c0a083ea51c8c82efd9a96743e14724}} 
 \index{WickedMotorShield@{WickedMotorShield}!get\_motor\_directionM@{get\_motor\_directionM}}
@@ -113,8 +161,26 @@ Definition at line 199 of file Wicked\+Motor\+Shield.\+cpp.
 {\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::get\+\_\+motor\+\_\+directionM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Return motor direction for a specific motor. 
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+number} & integer representing motor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shift register value for motor having done a bitwise and operation with the direction mask for the motor. Value will zero if direction bit is set (counter clockwise). Otherwise it will be greater than zero if direction bit is not set (clockwise). 
+\end{DoxyReturn}
 
-Definition at line 383 of file Wicked\+Motor\+Shield.\+cpp.
+
+Definition at line 420 of file Wicked\+Motor\+Shield.\+cpp.
+
+\mbox{\Hypertarget{class_wicked_motor_shield_a323ebd2491e704b5cadd90513e100125}\label{class_wicked_motor_shield_a323ebd2491e704b5cadd90513e100125}} 
+\index{WickedMotorShield@{WickedMotorShield}!get\_rc\_input\_pin@{get\_rc\_input\_pin}}
+\index{get\_rc\_input\_pin@{get\_rc\_input\_pin}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{get\_rc\_input\_pin()}{get\_rc\_input\_pin()}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::get\+\_\+rc\+\_\+input\+\_\+pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{rc\+\_\+input\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 240 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_ad676ad895cba921bdba62740486293ff}\label{class_wicked_motor_shield_ad676ad895cba921bdba62740486293ff}} 
 \index{WickedMotorShield@{WickedMotorShield}!get\_shift\_register\_value@{get\_shift\_register\_value}}
@@ -129,7 +195,7 @@ Get the shift register information for a specific motor.
 \end{DoxyParams}
 The information for motors M1 to M4 are contained in the first shift register. The information for motors M5 and M6 is contained in the second shift register. 
 
-Definition at line 149 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 156 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_ae9285c2a9bafcd57ea55934408eb4ae9}\label{class_wicked_motor_shield_ae9285c2a9bafcd57ea55934408eb4ae9}} 
 \index{WickedMotorShield@{WickedMotorShield}!getRCIN@{getRCIN}}
@@ -139,7 +205,7 @@ Definition at line 149 of file Wicked\+Motor\+Shield.\+cpp.
 
 
 
-Definition at line 208 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 225 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a94cee42254233ed301b3e6ccb7ba0b2c}\label{class_wicked_motor_shield_a94cee42254233ed301b3e6ccb7ba0b2c}} 
 \index{WickedMotorShield@{WickedMotorShield}!load\_shift\_register@{load\_shift\_register}}
@@ -151,7 +217,7 @@ Load the contents of second\+\_\+shift\+\_\+register and first\+\_\+shift\+\_\+r
 
 Data is only moved from the memory values on the Arduino board to the motor shield. No data is moved in the other direction. 
 
-Definition at line 135 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 142 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a0b92205bb3dede76817a6d52d54cc078}\label{class_wicked_motor_shield_a0b92205bb3dede76817a6d52d54cc078}} 
 \index{WickedMotorShield@{WickedMotorShield}!set\_shift\_register\_value@{set\_shift\_register\_value}}
@@ -170,7 +236,7 @@ Copy the shift register data for the specified motor into the correct data struc
 \end{DoxyParams}
 
 
-Definition at line 163 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 170 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a75209b54839906998d254a670de41af2}\label{class_wicked_motor_shield_a75209b54839906998d254a670de41af2}} 
 \index{WickedMotorShield@{WickedMotorShield}!setBrakeData@{setBrakeData}}
@@ -179,8 +245,15 @@ Definition at line 163 of file Wicked\+Motor\+Shield.\+cpp.
 {\footnotesize\ttfamily void Wicked\+Motor\+Shield\+::set\+Brake\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number,  }\item[{uint8\+\_\+t}]{brake\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 Set the contents of the shift\+\_\+registers to indicate the desired brake condition. 
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+number} & number of motor for which data is to be set \\
+\hline
+{\em brake\+\_\+type} & value is \mbox{\hyperlink{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}{B\+R\+A\+K\+E\+\_\+\+O\+FF}}, B\+R\+A\+K\+E\+\_\+\+H\+A\+RD, or \mbox{\hyperlink{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}{B\+R\+A\+K\+E\+\_\+\+S\+O\+FT}}. Value is the new brake condition.\\
+\hline
+\end{DoxyParams}
+Change Jan, 2020 \+: The value of \mbox{\hyperlink{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}{Wicked\+Motor\+Shield\+::old\+\_\+dir}} is only changed if brake status is changed from \mbox{\hyperlink{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}{B\+R\+A\+K\+E\+\_\+\+O\+FF}} to (\mbox{\hyperlink{_wicked_motor_shield_8h_a895ab019781500274ce305b613836989}{B\+R\+A\+K\+E\+\_\+\+H\+A\+RD}} or \mbox{\hyperlink{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}{B\+R\+A\+K\+E\+\_\+\+S\+O\+FT}}) or from (\mbox{\hyperlink{_wicked_motor_shield_8h_a895ab019781500274ce305b613836989}{B\+R\+A\+K\+E\+\_\+\+H\+A\+RD}} or \mbox{\hyperlink{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}{B\+R\+A\+K\+E\+\_\+\+S\+O\+FT}}) to \mbox{\hyperlink{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}{B\+R\+A\+K\+E\+\_\+\+O\+FF}}. 
 
-Definition at line 309 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 339 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}\label{class_wicked_motor_shield_a78bd74b57656b8903c6b098b04db6067}} 
 \index{WickedMotorShield@{WickedMotorShield}!setDirectionData@{setDirectionData}}
@@ -188,9 +261,16 @@ Definition at line 309 of file Wicked\+Motor\+Shield.\+cpp.
 \doxysubsubsection{\texorpdfstring{setDirectionData()}{setDirectionData()}}
 {\footnotesize\ttfamily void Wicked\+Motor\+Shield\+::set\+Direction\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+number,  }\item[{uint8\+\_\+t}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Set the value for the direction in Mx\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK bit and the element of the old\+\_\+dir directory. value of D\+I\+R\+\_\+\+CW ia 1 while the value for D\+I\+R\+\_\+\+C\+CW is set to 0 
+Set the value for the direction in Mx\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK bit and the element of the old\+\_\+dir directory. 
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+number} & number of motor for which direction is to be set \\
+\hline
+{\em direction} & value to be set for direction (\mbox{\hyperlink{_wicked_motor_shield_8h_a32aebb0062f8833d08b204b072721245}{D\+I\+R\+\_\+\+CW}} or \mbox{\hyperlink{_wicked_motor_shield_8h_a6d4cfbbc36469e74e77804b0c3c9d0ba}{D\+I\+R\+\_\+\+C\+CW}}). The value of D\+I\+R\+\_\+\+CW is 1 while the value for D\+I\+R\+\_\+\+C\+CW is set to 0.\\
+\hline
+\end{DoxyParams}
+Change Jan, 2020 -\/ No action to be taken if brake bit is set. 
 
-Definition at line 263 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 284 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_ad78f766721ebe540389b823de2404f9e}\label{class_wicked_motor_shield_ad78f766721ebe540389b823de2404f9e}} 
 \index{WickedMotorShield@{WickedMotorShield}!setSpeedM@{setSpeedM}}
@@ -200,7 +280,7 @@ Definition at line 263 of file Wicked\+Motor\+Shield.\+cpp.
 
 
 
-Definition at line 236 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 253 of file Wicked\+Motor\+Shield.\+cpp.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_a25598251b4b2318608cb71a2906c3811}\label{class_wicked_motor_shield_a25598251b4b2318608cb71a2906c3811}} 
 \index{WickedMotorShield@{WickedMotorShield}!version@{version}}
@@ -210,11 +290,21 @@ Definition at line 236 of file Wicked\+Motor\+Shield.\+cpp.
 
 Version number is hard-\/coded to a value of 1. 
 
-Definition at line 407 of file Wicked\+Motor\+Shield.\+cpp.
+Definition at line 474 of file Wicked\+Motor\+Shield.\+cpp.
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}\label{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}} 
+\index{WickedMotorShield@{WickedMotorShield}!first\_shift\_register@{first\_shift\_register}}
+\index{first\_shift\_register@{first\_shift\_register}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{first\_shift\_register}{first\_shift\_register}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register = 0xff\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Contains direction and brake status for motors \mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}}, \mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}}, \mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}}, and \mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}}. 
+
+Definition at line 199 of file Wicked\+Motor\+Shield.\+h.
+
 \mbox{\Hypertarget{class_wicked_motor_shield_acd10647e9753c734bbb46923ab191149}\label{class_wicked_motor_shield_acd10647e9753c734bbb46923ab191149}} 
 \index{WickedMotorShield@{WickedMotorShield}!M1\_PWM\_PIN@{M1\_PWM\_PIN}}
 \index{M1\_PWM\_PIN@{M1\_PWM\_PIN}!WickedMotorShield@{WickedMotorShield}}
@@ -225,7 +315,7 @@ Digital pin for M1 P\+WM (pulse width modulation).
 
 Pin 11 for standard pins, use pin 8 for alternate pins. 
 
-Definition at line 138 of file Wicked\+Motor\+Shield.\+h.
+Definition at line 210 of file Wicked\+Motor\+Shield.\+h.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_acc05c20236dc67a0979f7e0c66c3b7e8}\label{class_wicked_motor_shield_acc05c20236dc67a0979f7e0c66c3b7e8}} 
 \index{WickedMotorShield@{WickedMotorShield}!M6\_PWM\_PIN@{M6\_PWM\_PIN}}
@@ -237,7 +327,7 @@ Digital pin for M6 P\+WM (pulse width modulation).
 
 Pin 3 for standard pins, pin 4 for alternate pins. 
 
-Definition at line 143 of file Wicked\+Motor\+Shield.\+h.
+Definition at line 215 of file Wicked\+Motor\+Shield.\+h.
 
 \mbox{\Hypertarget{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}\label{class_wicked_motor_shield_aac68eff7dd860f3811be0f290d70c0bc}} 
 \index{WickedMotorShield@{WickedMotorShield}!old\_dir@{old\_dir}}
@@ -245,12 +335,57 @@ Definition at line 143 of file Wicked\+Motor\+Shield.\+h.
 \doxysubsubsection{\texorpdfstring{old\_dir}{old\_dir}}
 {\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::old\+\_\+dir = \{0,0,0,0,0,0\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
-Contains the old value of the direction bit if the value of the brake bit is changed from 0 to 1. ~\newline
-
+Contains the old value of the direction bit if the value of the brake bit is changed from 0 to 1.
 
 When the brake bit is changed from 0 to 1, the direction bit indicates whether it is B\+R\+A\+K\+E\+\_\+\+S\+O\+FT or B\+R\+A\+K\+E\+\_\+\+H\+A\+RD. If the direction bit wasn\textquotesingle{}t copied to this array, the value would be lost. 
 
-Definition at line 144 of file Wicked\+Motor\+Shield.\+h.
+Definition at line 216 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked_motor_shield_ab5842957bce402c5926d63d898b5eef7}\label{class_wicked_motor_shield_ab5842957bce402c5926d63d898b5eef7}} 
+\index{WickedMotorShield@{WickedMotorShield}!RCIN1\_PIN@{RCIN1\_PIN}}
+\index{RCIN1\_PIN@{RCIN1\_PIN}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{RCIN1\_PIN}{RCIN1\_PIN}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::\+R\+C\+I\+N1\+\_\+\+P\+IN = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Digital pin used for Radio Control Input Pin 1.
+
+Pin 4 used for standard pins, pin 3 for alternate pins. 
+
+Definition at line 202 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked_motor_shield_a693ed5a373f9c93516d53905d85c8fcc}\label{class_wicked_motor_shield_a693ed5a373f9c93516d53905d85c8fcc}} 
+\index{WickedMotorShield@{WickedMotorShield}!RCIN2\_PIN@{RCIN2\_PIN}}
+\index{RCIN2\_PIN@{RCIN2\_PIN}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{RCIN2\_PIN}{RCIN2\_PIN}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::\+R\+C\+I\+N2\+\_\+\+P\+IN = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Digital pin used for Radio Control Input Pin 2.
+
+Pin 8 used for standard pins, pin 11 for alternate pins. 
+
+Definition at line 203 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}\label{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}} 
+\index{WickedMotorShield@{WickedMotorShield}!second\_shift\_register@{second\_shift\_register}}
+\index{second\_shift\_register@{second\_shift\_register}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{second\_shift\_register}{second\_shift\_register}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::second\+\_\+shift\+\_\+register = 0xff\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Contains direction and brake status for motors \mbox{\hyperlink{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}{M5}} and \mbox{\hyperlink{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}{M6}}. 
+
+Definition at line 200 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked_motor_shield_af195d531882a8b073d0e715eb8a4b054}\label{class_wicked_motor_shield_af195d531882a8b073d0e715eb8a4b054}} 
+\index{WickedMotorShield@{WickedMotorShield}!SERIAL\_DATA\_PIN@{SERIAL\_DATA\_PIN}}
+\index{SERIAL\_DATA\_PIN@{SERIAL\_DATA\_PIN}!WickedMotorShield@{WickedMotorShield}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_DATA\_PIN}{SERIAL\_DATA\_PIN}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+Motor\+Shield\+::\+S\+E\+R\+I\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+P\+IN = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Digital Arduino pin used to send data to motor shield.
+
+Pin 12 for standard pins, pin 0 for alternate pins. 
+
+Definition at line 201 of file Wicked\+Motor\+Shield.\+h.
 
 
 

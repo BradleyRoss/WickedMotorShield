@@ -23,6 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Wicked Device Motor Shield
    </div>
+   <div id="projectbrief">Software Library for Wicked Device Motor Shield</div>
   </td>
  </tr>
  </tbody>
@@ -63,6 +64,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_wicked___stepper-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Wicked_Stepper Class Reference</div>  </div>
@@ -82,15 +85,39 @@ Inheritance diagram for Wicked_Stepper:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a498d2474ff4cb4e4090d40cb0ae5204f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a498d2474ff4cb4e4090d40cb0ae5204f">Wicked_Stepper</a> (uint16_t number_of_steps, uint8_t m1, uint8_t m2, uint8_t use_alternate_pins=0)</td></tr>
+<tr class="memitem:a498d2474ff4cb4e4090d40cb0ae5204f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a498d2474ff4cb4e4090d40cb0ae5204f">Wicked_Stepper</a> (uint16_t <a class="el" href="class_wicked___stepper.html#a74cae676aeae3538d0ee7159b5d2afe2">number_of_steps</a>, uint8_t <a class="el" href="class_wicked___stepper.html#aa1ffaff58d4de939241fb2d87f9a2c08">m1</a>, uint8_t <a class="el" href="class_wicked___stepper.html#a1b318cf9a37a6735db026ddba4bf6c32">m2</a>, uint8_t use_alternate_pins=0)</td></tr>
 <tr class="separator:a498d2474ff4cb4e4090d40cb0ae5204f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8650bc2ad2cde53ca86a1a08af9934cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a8650bc2ad2cde53ca86a1a08af9934cc">setSpeed</a> (uint32_t speed)</td></tr>
+<tr class="memitem:a8650bc2ad2cde53ca86a1a08af9934cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a8650bc2ad2cde53ca86a1a08af9934cc">setSpeed</a> (uint32_t <a class="el" href="class_wicked___stepper.html#a405dbcaeea952727fe86bcaeda4f8f8d">speed</a>)</td></tr>
 <tr class="separator:a8650bc2ad2cde53ca86a1a08af9934cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31d37e5de4e7c328642180514458a53d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a31d37e5de4e7c328642180514458a53d">step</a> (int16_t number_of_steps)</td></tr>
+<tr class="memitem:a31d37e5de4e7c328642180514458a53d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a31d37e5de4e7c328642180514458a53d">step</a> (int16_t <a class="el" href="class_wicked___stepper.html#a74cae676aeae3538d0ee7159b5d2afe2">number_of_steps</a>)</td></tr>
 <tr class="separator:a31d37e5de4e7c328642180514458a53d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_wicked_motor_shield"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_wicked_motor_shield')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_wicked_motor_shield.html">WickedMotorShield</a></td></tr>
 <tr class="memitem:a82426e4064f39a92bbf644bbdef7ef77 inherit pub_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a82426e4064f39a92bbf644bbdef7ef77">WickedMotorShield</a> (uint8_t use_alternate_pins=0)</td></tr>
 <tr class="separator:a82426e4064f39a92bbf644bbdef7ef77 inherit pub_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a54fd8eed9b81a60f180918ea785f0085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a54fd8eed9b81a60f180918ea785f0085">stepMotor</a> (int this_step)</td></tr>
+<tr class="separator:a54fd8eed9b81a60f180918ea785f0085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aefcd002000b21a05dfe68f890a739f98"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#aefcd002000b21a05dfe68f890a739f98">direction</a></td></tr>
+<tr class="separator:aefcd002000b21a05dfe68f890a739f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a405dbcaeea952727fe86bcaeda4f8f8d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a405dbcaeea952727fe86bcaeda4f8f8d">speed</a></td></tr>
+<tr class="separator:a405dbcaeea952727fe86bcaeda4f8f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee2a1dbcdaba55ea7c4a2ad98ddc268"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a3ee2a1dbcdaba55ea7c4a2ad98ddc268">step_delay</a></td></tr>
+<tr class="separator:a3ee2a1dbcdaba55ea7c4a2ad98ddc268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cae676aeae3538d0ee7159b5d2afe2"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a74cae676aeae3538d0ee7159b5d2afe2">number_of_steps</a></td></tr>
+<tr class="separator:a74cae676aeae3538d0ee7159b5d2afe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd725e8bd45f4c63e35b340e3f5a699"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a1fd725e8bd45f4c63e35b340e3f5a699">step_number</a></td></tr>
+<tr class="separator:a1fd725e8bd45f4c63e35b340e3f5a699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3eaab358d1c46f69a9db0394170030c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#af3eaab358d1c46f69a9db0394170030c">last_step_time</a></td></tr>
+<tr class="separator:af3eaab358d1c46f69a9db0394170030c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ffaff58d4de939241fb2d87f9a2c08"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#aa1ffaff58d4de939241fb2d87f9a2c08">m1</a></td></tr>
+<tr class="separator:aa1ffaff58d4de939241fb2d87f9a2c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b318cf9a37a6735db026ddba4bf6c32"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked___stepper.html#a1b318cf9a37a6735db026ddba4bf6c32">m2</a></td></tr>
+<tr class="separator:a1b318cf9a37a6735db026ddba4bf6c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -104,14 +131,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad676ad895cba921bdba62740486293ff inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbe45be72eddd30505401af152e44609 inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#abbe45be72eddd30505401af152e44609">apply_mask</a> (uint8_t *shift_register_value, uint8_t mask, uint8_t operation)</td></tr>
 <tr class="separator:abbe45be72eddd30505401af152e44609 inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cff3b2d25e39ae878f896c4c475d5f1 inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a1cff3b2d25e39ae878f896c4c475d5f1">filter_mask</a> (uint8_t shift_regsiter_value, uint8_t mask)</td></tr>
-<tr class="separator:a1cff3b2d25e39ae878f896c4c475d5f1 inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f3a1c934021dd75f80c0d4e075c59b inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a16f3a1c934021dd75f80c0d4e075c59b">filter_mask</a> (uint8_t shift_register_value, uint8_t mask)</td></tr>
+<tr class="separator:a16f3a1c934021dd75f80c0d4e075c59b inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b92205bb3dede76817a6d52d54cc078 inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078">set_shift_register_value</a> (uint8_t motor_number, uint8_t value)</td></tr>
 <tr class="separator:a0b92205bb3dede76817a6d52d54cc078 inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94cee42254233ed301b3e6ccb7ba0b2c inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a94cee42254233ed301b3e6ccb7ba0b2c">load_shift_register</a> (void)</td></tr>
 <tr class="separator:a94cee42254233ed301b3e6ccb7ba0b2c inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0a083ea51c8c82efd9a96743e14724 inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a8c0a083ea51c8c82efd9a96743e14724">get_motor_directionM</a> (uint8_t motor_number)</td></tr>
 <tr class="separator:a8c0a083ea51c8c82efd9a96743e14724 inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2927f708ec576c8e66fc08500d4e682a inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a2927f708ec576c8e66fc08500d4e682a">get_motor_brakeM</a> (uint8_t motor_number)</td></tr>
+<tr class="separator:a2927f708ec576c8e66fc08500d4e682a inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad78f766721ebe540389b823de2404f9e inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#ad78f766721ebe540389b823de2404f9e">setSpeedM</a> (uint8_t motor_number, uint8_t pwm_val)</td></tr>
 <tr class="separator:ad78f766721ebe540389b823de2404f9e inherit pro_methods_class_wicked_motor_shield"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78bd74b57656b8903c6b098b04db6067 inherit pro_methods_class_wicked_motor_shield"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wicked_motor_shield.html#a78bd74b57656b8903c6b098b04db6067">setDirectionData</a> (uint8_t motor_number, uint8_t direction)</td></tr>
@@ -128,7 +157,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00161">161</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00234">234</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a498d2474ff4cb4e4090d40cb0ae5204f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a498d2474ff4cb4e4090d40cb0ae5204f">&#9670;&nbsp;</a></span>Wicked_Stepper()</h2>
@@ -168,7 +197,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00413">413</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00480">480</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
 
 </div>
 </div>
@@ -189,7 +218,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00434">434</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00501">501</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,7 +238,228 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00438">438</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00505">505</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a54fd8eed9b81a60f180918ea785f0085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fd8eed9b81a60f180918ea785f0085">&#9670;&nbsp;</a></span>stepMotor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wicked_Stepper::stepMotor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>this_step</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8cpp_source.html#l00542">542</a> of file <a class="el" href="_wicked_motor_shield_8cpp_source.html">WickedMotorShield.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aefcd002000b21a05dfe68f890a739f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefcd002000b21a05dfe68f890a739f98">&#9670;&nbsp;</a></span>direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Wicked_Stepper::direction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00238">238</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="af3eaab358d1c46f69a9db0394170030c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3eaab358d1c46f69a9db0394170030c">&#9670;&nbsp;</a></span>last_step_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Wicked_Stepper::last_step_time</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00243">243</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1ffaff58d4de939241fb2d87f9a2c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ffaff58d4de939241fb2d87f9a2c08">&#9670;&nbsp;</a></span>m1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Wicked_Stepper::m1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00244">244</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b318cf9a37a6735db026ddba4bf6c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b318cf9a37a6735db026ddba4bf6c32">&#9670;&nbsp;</a></span>m2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Wicked_Stepper::m2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00245">245</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="a74cae676aeae3538d0ee7159b5d2afe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cae676aeae3538d0ee7159b5d2afe2">&#9670;&nbsp;</a></span>number_of_steps</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Wicked_Stepper::number_of_steps</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00241">241</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="a405dbcaeea952727fe86bcaeda4f8f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a405dbcaeea952727fe86bcaeda4f8f8d">&#9670;&nbsp;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Wicked_Stepper::speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00239">239</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ee2a1dbcdaba55ea7c4a2ad98ddc268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee2a1dbcdaba55ea7c4a2ad98ddc268">&#9670;&nbsp;</a></span>step_delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Wicked_Stepper::step_delay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00240">240</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+
+</div>
+</div>
+<a id="a1fd725e8bd45f4c63e35b340e3f5a699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fd725e8bd45f4c63e35b340e3f5a699">&#9670;&nbsp;</a></span>step_number</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Wicked_Stepper::step_number</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00242">242</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>

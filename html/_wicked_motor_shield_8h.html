@@ -23,6 +23,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Wicked Device Motor Shield
    </div>
+   <div id="projectbrief">Software Library for Wicked Device Motor Shield</div>
   </td>
  </tr>
  </tbody>
@@ -269,9 +270,11 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>If M1_BRAKE_MASK bit is zero, brake is set to BRAKE_OFF and M1_DIR_MASK bit indicates direction of rotation. If M1_BRAKE_MASK bit is one, M1_DIR_MASK indicates whether hard brake or soft brake. </p>
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#ac597abe7cf610f262f7aaec53ed1d413">M1</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>If M1_BRAKE_MASK bit is zero, brake is set to BRAKE_OFF and M1_DIR_MASK bit indicates direction of rotation. If M1_BRAKE_MASK bit is one, M1_DIR_MASK indicates whether hard brake or soft brake.</p>
+<p>There are equivalent macro definitions BRAKE_MASK and DIR_MASK for the other motors (M2, M3, M4, M5, M6). </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00084">84</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00108">108</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -286,8 +289,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status for motor <a class="el" href="_wicked_motor_shield_8h.html#ac597abe7cf610f262f7aaec53ed1d413">M1</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00076">76</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00094">94</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -319,8 +324,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#a2a187ef3afced0eb4c4cb99515e5429c">M2</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00086">86</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00122">122</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -335,8 +342,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for direction status of motor <a class="el" href="_wicked_motor_shield_8h.html#a2a187ef3afced0eb4c4cb99515e5429c">M2</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00085">85</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00115">115</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -353,7 +362,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Digital pin used for specfying speed of motor M2. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00099">99</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00171">171</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -385,8 +394,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#ad801d72bd01ef1ac9b86dbf4de0d355d">M3</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00088">88</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00136">136</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -401,8 +412,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for direction status of motor <a class="el" href="_wicked_motor_shield_8h.html#ad801d72bd01ef1ac9b86dbf4de0d355d">M3</a> in <a class="el" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00087">87</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00129">129</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -419,7 +432,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Digital pin used for specifying speed of motor M3. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00103">103</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00175">175</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -451,8 +464,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#a9a3433d6613a64df14bf05957ba30837">M4</a> in WickedMotorShield::shift_register_1.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00075">75</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00087">87</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -467,8 +482,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for direction status of motor <a class="el" href="_wicked_motor_shield_8h.html#a9a3433d6613a64df14bf05957ba30837">M4</a> in WickedMotorShield::shift_register_1.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00074">74</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00080">80</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -485,7 +502,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Digital pin used for specifying speed of motor M4. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00107">107</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00179">179</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -517,8 +534,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#aaae035dfc29e91b0d2b941a446546631">M5</a> in <a class="el" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00094">94</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00166">166</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -533,8 +552,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for direction status of motor <a class="el" href="_wicked_motor_shield_8h.html#aaae035dfc29e91b0d2b941a446546631">M5</a> in <a class="el" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00093">93</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00159">159</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -551,7 +572,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Digital pin used for specifying speed of motor M5. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00111">111</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00183">183</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -583,8 +604,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for brake status of motor <a class="el" href="_wicked_motor_shield_8h.html#a3a58ea008b2446f96146735635b03373">M6</a> in <a class="el" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00092">92</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00152">152</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -599,8 +622,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Shows location of bit for direction status of motor <a class="el" href="_wicked_motor_shield_8h.html#a3a58ea008b2446f96146735635b03373">M6</a> in <a class="el" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a>.</p>
+<p>See <a class="el" href="_wicked_motor_shield_8h.html#a80190189c2e1cddf8631505eea9d3196">M1_DIR_MASK</a> and <a class="el" href="_wicked_motor_shield_8h.html#ab69399f2492111e77b73b134d8d3b4bd">M1_BRAKE_MASK</a> for more information. </p>
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00091">91</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00145">145</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -616,7 +641,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00119">119</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00191">191</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -632,7 +657,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00121">121</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00193">193</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -648,7 +673,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00120">120</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00192">192</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -664,7 +689,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00113">113</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00185">185</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -680,7 +705,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00114">114</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00186">186</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -696,7 +721,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00116">116</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00188">188</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -712,7 +737,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00117">117</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00189">189</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
@@ -728,7 +753,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00123">123</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_wicked_motor_shield_8h_source.html#l00195">195</a> of file <a class="el" href="_wicked_motor_shield_8h_source.html">WickedMotorShield.h</a>.</p>
 
 </div>
 </div>
