@@ -180,7 +180,8 @@ void WickedMotorShield::set_shift_register_value(uint8_t motor_number, uint8_t v
   * Carry out bitwise or/and operation .
   * @param shift_register_value Address of shift register to be altered.
   *     This will be the address of either WickedDeviceShield#first_shift_register
-  *     or WickedDeviceShield#second_shift_register.
+  *     or WickedDeviceShield#second_shift_register.  Only the bit whose location is
+  *     given by the mask parameter will be altered.
   * @param mask with bit set in position to be changed.
   * @param operation flag indicating whether bit to be set (#OPERATION_SET)
   *     or cleared (#OPERATION_CLEAR).  A value of #OPERATION_NONE indicates
@@ -274,12 +275,18 @@ void WickedMotorShield::setSpeedM(uint8_t motor_number, uint8_t pwm_val){
 /**
  * Set the value for the direction in Mx_DIR_MASK bit and the element of the
  * old_dir directory.
- * value of DIR_CW ia 1 while the value for DIR_CCW is set to 0
+ * @param motor_number number of motor for which direction is to be set
+ * @param direction value to be set for direction (#DIR_CW or #DIR_CCW).  The
+ *        value of DIR_CW is 1 while the value for DIR_CCW is set to 0.
+ * 
+ * Change Jan, 2020 - No action to be taken if brake bit is set.
  */
 void WickedMotorShield::setDirectionData(uint8_t motor_number, uint8_t direction){
   uint8_t shift_register_value = get_shift_register_value(motor_number);
   uint8_t * p_shift_register_value = &shift_register_value;
   uint8_t dir_operation   = OPERATION_NONE;
+  uint8_t brake_status = getMotorBrakeM(motor_number);
+  if (brake_status > 0) { return; }
 
   if(motor_number >= 6){
     return; // invalid motor_number, go no further
@@ -321,6 +328,13 @@ void WickedMotorShield::setDirectionData(uint8_t motor_number, uint8_t direction
 }
 /**
  * Set the contents of the shift_registers to indicate the desired brake condition.
+ * @param motor_number number of motor for which data is to be set
+ * @param brake_type value is #BRAKE_OFF, BRAKE_HARD, or #BRAKE_SOFT.  Value  is
+ *                   the new brake condition.
+ *
+ * Change Jan, 2020 :  The value of #WickedMotorShield#old_dir is only changed if brake status is
+ *     changed from #BRAKE_OFF to (#BRAKE_HARD or #BRAKE_SOFT) or from
+ *     (#BRAKE_HARD or #BRAKE_SOFT) to #BRAKE_OFF.
  */
 void WickedMotorShield::setBrakeData(uint8_t motor_number, uint8_t brake_type){
   uint8_t shift_register_value = get_shift_register_value(motor_number);
@@ -347,10 +361,11 @@ void WickedMotorShield::setBrakeData(uint8_t motor_number, uint8_t brake_type){
     brake_operation = OPERATION_SET;
     dir_operation = OPERATION_SET;
   }
+  uint8_t brake_status = getMotorBrakeM(motor_number);
 
   // save / restore directionality
   // we already know motor_number is a safe index into old_dir because we checked earlier
-  if(brake_type == BRAKE_OFF){
+  if(brake_type == BRAKE_OFF && brake_status > 0){
     // when clearing the brake, restore the old_dir value
     if(old_dir[motor_number] == 1){
       dir_operation = OPERATION_SET;
@@ -359,7 +374,7 @@ void WickedMotorShield::setBrakeData(uint8_t motor_number, uint8_t brake_type){
       dir_operation = OPERATION_CLEAR;
     }
   }
-  else if((brake_type == BRAKE_SOFT) || (brake_type == BRAKE_HARD)){
+  else if(brake_status == 0 && ((brake_type == BRAKE_SOFT) || (brake_type == BRAKE_HARD))){
     // when applying the brake, save the old_dir value
     old_dir[motor_number] = get_motor_directionM(motor_number);
   }
@@ -397,7 +412,10 @@ void WickedMotorShield::setBrakeData(uint8_t motor_number, uint8_t brake_type){
  * Return motor direction for a specific motor.
  * @param motor_number integer representing motor
  * @return shift register value for motor having done a bitwise
- *         and operation with the direction mask for the motor
+ *         and operation with the direction mask for the motor.  Value will
+ *         zero if direction bit is set (counter clockwise).
+ *         Otherwise it will be greater than zero
+ *         if direction bit is not set (clockwise).
  */
 uint8_t WickedMotorShield::get_motor_directionM(uint8_t motor_number){
   uint8_t shift_register_value = get_shift_register_value(motor_number);
@@ -424,7 +442,9 @@ uint8_t WickedMotorShield::get_motor_directionM(uint8_t motor_number){
  * Return motor brake status for a specific motor.
  * @param motor_number integer representing motor
  * @return shift register value for motor having done a bitwise
- *         and operation with the brake mask for the motor
+ *         and operation with the brake mask for the motor.  This 
+ *         will be zero if the brake bit is not set and greater
+ *         than zero if the brake bit is set.
  */
 uint8_t WickedMotorShield::get_motor_brakeM(uint8_t motor_number){
   uint8_t shift_register_value = get_shift_register_value(motor_number);
@@ -447,12 +467,6 @@ uint8_t WickedMotorShield::get_motor_brakeM(uint8_t motor_number){
   return 0xff; // indicate error - bad motor_number argument
 
 }
-
-
-
-
-
-
 
 /**
  *  Version number is hard-coded to a value of 1.
