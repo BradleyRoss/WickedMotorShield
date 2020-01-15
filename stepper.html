@@ -6,12 +6,17 @@
     <head>
     <body>
       <h1>Use with Stepper Motors</h1>
-      <p>The Wicked Device Motor Shield is designed for use with bipolar stepping motors.  However,
+      <p>The Wicked Device Motor Shield is designed for use with bipolar rather than unipolar
+         stepping motors.  However,
          some unipolar stepping motors can be wired as bipolar units so long as the center taps
-         of the two sets of windings are not connected.  The 
+         of the two sets of windings are not connected.</p>
+      <p>The user's manual for the motor shield shows three different wirings for stepper motors.
+         It should be mentioned that the 6-wire unipolar motor can be used as a 4-wire bipolar 
+         motor by simply leaving the center taps (5 and 6) unconnected.</p>
+      <p>The 5-wire unipolar configuration is used by the
          <a href="https://www.osepp.com/downloads/pdf/stepd-01-data-sheet.pdf" target="_blank">
-         28BYJ-48</a> is a unipolar stepping motor that has the 
-         center taps connected to each other and does not seem suitable for use with this board.</p>
+         28BYJ-48</a>.  Since this configuration has the 
+         center taps connected to each other, it does not seem suitable for use with this board.</p>
       <p>There are a number of ways in which stepper motors can be wired.  One article
          discussing the various schemes 
          <a href="https://42bots.com/tutorials/stepper-motor-wiring-how-to/" target="_blank">

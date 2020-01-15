@@ -41,30 +41,43 @@
     <tr><td colspan="4">Edge of header strip nearest corner </td></tr>
     </table>
     <h2>13x3 header strip</h2>
+    <p>According to the user's manual, the row of 13 pins closest to the edge of the card is the top
+       row and the row furthest from the edge of the card is the bottom row.
     <table class="border">
       <tr><td colspan="2">Edge of header strip nearest power input to shield.</td>
           <td rowspan="15">Right edge of strip</td></tr>
-      <tr><td>Servo motor</td><td rowspan="6">It appears that servo motors will be connected
-              to these rows, but there is little information.  It is possible that that two of the
-              pins on each row represent the positive and negative power leads for the servo motor
-              and the third is to pass the PWM output to the control lead of the servo.  It is 
-              unknown which row is connected to each pin on the Arduino, but it should be possible
-              to determine this by experimentation since the only PWM pins are the digital pins
-              3, 5, 6, 9, 10, and 11.</td></tr>
+      <tr><td>Servo motor</td><td rowspan="6">These 6 sets can be used to drive servo 
+              motors.  The bottom pin of each set is connected to ground.  The middle pin
+              is attached to 5 volts.  (TBR:  Is the middle pin 5 volts or is it
+              attached to the positive lead of the power feed to the shield.) The top pin is
+              then attached to the PWM digital output pin from the Arduino.  (TBR: I assume that
+              the sets for the six possible servos are in order, but it doesn't say which end
+              is M1 and which is M6.)
+              </td></tr>
       <tr><td>Servo motor</td></tr>
       <tr><td>Servo motor</td></tr>
       <tr><td>Servo motor</td></tr>    
       <tr><td>Servo motor</td></tr>
       <tr><td>Servo motor</td></tr> 
-      <tr><td>Jumper</td><td rowspan="5">The purpose of these jumpers is undocumented, but it
-              is possible that are to select whether to use the primary or alternate pins defined
-              in the WickedMotorShield documentation.</td></tr>
-      <tr><td>Jumper</td></tr>   
-      <tr><td>Jumper</td></tr>   
-      <tr><td>Jumper</td></tr>   
-      <tr><td>Jumper</td></tr> 
+      <tr><td>Jumper for M1 PWM</td><td rowspan="5">
+              According to the user's manual, the alternate pin locations are for use with the
+              <a href="https://shop.wickeddevice.com/product/wildfire/" target="blank">
+              WildFire v3 microcontroller</a>.<br /><br />
+              If the shield is used with the Arduino Uno board, the jumpers should connect
+              the middle pin to the bottom pin.  For using the alternate pin locations for
+              WildFire microcontroller, the jumpers should connect the middle pin to the
+              top pin.  All five jumpers in this set should be connected in the same way.</td></tr>
+      <tr><td>Jumper for M6 PWM</td></tr>   
+      <tr><td>Jumper for Shift Register Data</td></tr>   
+      <tr><td>Jumper for RC Input 2</td></tr>   
+      <tr><td>Jumper for RC Input 1</td></tr> 
       <tr><td>RC In 2</td><td rowspan="2">These are apparently for use
-              with radio control receivers.</td></tr>
+              with radio control receivers.  The bottom pin of each set is connected to ground.  The
+              user's manual says that the middle pin is connected to 5V.  If the BEC is attached,
+              the middle pin supplies 5 volts.  If the BEC jumper is missing, no power is 
+              supplied to the middle pin.  The top bin is then connected to a pin on the Arduino Uno or
+              WildFire microcontroller.
+              </td></tr>
       <tr><td>RC In 1</td></tr>  
     </table>
     <hr />
