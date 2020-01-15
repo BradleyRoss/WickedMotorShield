@@ -18,6 +18,18 @@
  *     BRAKE_SOFT condition is the new brake condition.  It appears that the
  *     WickedMotorShield#old_dir value is currently updated if going from
  *     BRAKE_SOFT to BRAKE_HARD or from BRAKE_HARD to BRAKE_SOFT.
+ *  -  It appears that either the brake status should be set to #BRAKE_OFF
+ *     when the direction is set or no action should be taken if the brake status
+ *     is not #BRAKE_OFF.
+ *  -  Are the alternate pins for use with the Arduino Mega?  If the alternate
+ *     pins are to be used, how is this represented in the position of the
+ *     the jumpers?  Is some other method used to indicate the use of
+ *     alternate pin locations?
+ *  -  Can I use the two RC in pins to provide for two way communication using I2C
+ *     with another device such as a Bluetooth serial card?  Should the configuration
+ *     of the pins be removed from the constructor since the motor shield library does
+ *     not use them.  The pins would then be configured by the software that
+ *     communicates with the outside world.
  *  @file
  */
 /* Copyright (C) 2014 by Victor Aprea <victor.aprea@wickeddevice.com>
@@ -105,7 +117,34 @@ uint8_t WickedMotorShield::M6_PWM_PIN = 3;
  */
 uint8_t WickedMotorShield::old_dir[6] = {0,0,0,0,0,0};
 
-
+/**
+ * Constructor for WickedMotorShield, which has Wicked_DCMotor and
+ * Wicked_Stepper as subclasses.
+ *
+ * @param use_alternate_pins if the value is equal to #USE_ALTERNATE_PINS,
+ *        the values used for WickedMotorShield#SERIAL_DATA_PIN,
+ *        WickedMotorShield#RCIN1_PIN, WickedMotorShield#RCIN2_PIN,
+ *        WickedMotorShield#M1_PWM_PIN, and WickedMotorShield#M6_PWM_PIN
+ *        changed to an alternate set.
+ *
+ * <table>
+ * <tr><td>Symbol</td><td>Standard</td><td>Alternate</td></tr>
+ * <tr><td>WickedMotorShield#SERIAL_DATA_PIN</td><td>12</td><td>0</td></tr>
+ * <tr><td>WickedMotorShield#RCIN1_PIN</td><td>4</td><td>3</td></tr>
+ * <tr><td>WickedMotorShield#RCIN2_PIN</td><td>8</td><td>11</td></tr>
+ * <tr><td>WickedMotorShield#M1_PWM_PIN</td><td>11</td><td>8</td></tr>
+ * <tr><td>#M2_PWM_PIN</td><td>9</td><td>9</td></tr>
+ * <tr><td>#M3_PWM_PIN</td><td>5</td><td>5</td></tr>
+ * <tr><td>#M4_PWM_PIN</td><td>10</td><td>10</td></tr>
+ * <tr><td>#M5_PWM_PIN</td><td>6</td><td>6</td></tr>
+ * <tr><td>WickedMotorShield#M6_PWM_PIN</td><td>3</td><td>4</td></tr>
+ * </table>
+ *
+ * <p>Pins 4 and 8 do not support PWM on Arduino Uno R3 microcontroller board.
+ *    However, all of these pins support PWM on the
+ *    <a href="https://www.electroschematics.com/arduino-mega-2560-pinout/" target="_blank">
+ *    Arduino Mega</a></p>
+ */
 WickedMotorShield::WickedMotorShield(uint8_t use_alternate_pins){
 
   if( use_alternate_pins == USE_ALTERNATE_PINS){
@@ -278,20 +317,25 @@ void WickedMotorShield::setSpeedM(uint8_t motor_number, uint8_t pwm_val){
  * @param motor_number number of motor for which direction is to be set
  * @param direction value to be set for direction (#DIR_CW or #DIR_CCW).  The
  *        value of DIR_CW is 1 while the value for DIR_CCW is set to 0.
- * 
+ *
  * Change Jan, 2020 - No action to be taken if brake bit is set.
+ *
+ * This needs to be reviewed.  Either the brake status should be set to #BRAKE_OFF
+ * when the direction is set or no action should be taken if the brake status
+ * is not #BRAKE_OFF.  Should the brake status always be changed to BRAKE_OFF
+ * if this method is called.
  */
 void WickedMotorShield::setDirectionData(uint8_t motor_number, uint8_t direction){
   uint8_t shift_register_value = get_shift_register_value(motor_number);
   uint8_t * p_shift_register_value = &shift_register_value;
   uint8_t dir_operation   = OPERATION_NONE;
   uint8_t brake_status = getMotorBrakeM(motor_number);
-  if (brake_status > 0) { return; }
+
 
   if(motor_number >= 6){
     return; // invalid motor_number, go no further
   }
-
+  if (brake_status > 0) { return; }
   //TODO: is this the "correct" sense of DIR_CW / DIR_CCW
   // this explicitly becomes the old direction value
   if(direction == DIR_CW){
@@ -442,7 +486,7 @@ uint8_t WickedMotorShield::get_motor_directionM(uint8_t motor_number){
  * Return motor brake status for a specific motor.
  * @param motor_number integer representing motor
  * @return shift register value for motor having done a bitwise
- *         and operation with the brake mask for the motor.  This 
+ *         and operation with the brake mask for the motor.  This
  *         will be zero if the brake bit is not set and greater
  *         than zero if the brake bit is set.
  */
