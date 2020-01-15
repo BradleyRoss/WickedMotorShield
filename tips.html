@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hints &amp; Kinks</title>
+  </head>
+  <body>
+  <h2>Eliminating trailing spaces</h2>
+  <p>There is a simple way of eliminating trailing spaces at the end
+     of lines using the vi text editor.  The following command
+     will remove any contiguous group of one or more spaces from the
+     end of every line in the file.<p>
+  <p><code>1,$s/\s*$//</code></p>
+  <h2>Jekyll and GitHub</h2>
+  <p>The website https://github.io uses <a href="https://en.wikipedia.org/wiki/Jekyll_(software)">Jekyll</a>
+     to format the documentation pages.  Unfortunately, there is a conflict concerning the use of
+     <a href="http://doxygen.nl" target="_blank">Doxygen</a></p>
+  <ul>
+  <li>Jekyll assumes that all files whose names begin with an underscore character contain 
+      instructions for the Jekyll software and are not to be displayed to the end user.</li>
+  <li>Doxygen uses whose files whose names start with underscores for a large part of the documentation.</li>
+  </ul>
+  <p>It is therefore necessary to have a file named <code>.nojekyll</code> in the root directory of the
+     gh_pages branch.</p>
+  <hr />
+  <p><a href="index.html">Return to main page</a></p>
+  </body>
+</html>

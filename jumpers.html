@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Motor Shield Jumpers and Headers</title>
+    <link rel="stylesheet" type="text/css" href="top.css">
+  </head>
+  <body>
+    <h1>Motor Shield Jumpers and Headers</h1>
+    <p>There are a two sets of headers on the Wicked Device Motor Control Shield.  The first
+       of these is a strip of 9 rows of 2 columns each located near the analog input pins on
+       the Arduino Uno board.  The second is a strip of 13 rows with three columns located over the 
+       digital pins on the Arduino Uno microcontroller.  For purposes of documentation the side with
+       analog input pins will be referenced as the left side of the board and the side with the
+       digital pins will be referenced as the right side of the board.</p>
+    <h2>9x2 Header strip</h2>
+    <table class="border">
+    <tr><td class="narrow" rowspan="12">Left side of board</td></tr>
+    <tr><td colspan="4">Edge of header strip nearest center</td></tr>
+    <tr><td>Power interconnect</td><td>If the jumper is in place
+            power from the motor shield will be passed to the
+            Arduino Uno.</td></tr>
+    <tr><td>Unknown</td>
+        <td rowspan="2">This may be a means of extending power connections on Arduino Uno
+            to other components.  I have not been able to find any information on
+            these rows of the header strip.</tr>
+    <tr><td>Unknown</td></tr>
+    <tr><td>M1 A0 </td>
+        <td rowspan="6">Jumper connecting current sensor on motor shield to
+            analog input pin on Arduino Uno.  <br />
+            If the jumper is in place, the current sensor for
+            the given motor (M1..M6) is connected to the corresponding analog
+            input pin (A0..A5)..  Since the MOTO4 only supports four motors, it
+            does not have jumpers on the rows for the M5 and M6
+            motors.</td></tr>
+    <tr><td>M2 A1</td></tr>
+    <tr><td>M3 A2</td></tr>
+    <tr><td>M4 A3</td></tr>
+    <tr><td>M5 A4</td></tr>
+    <tr><td>M6 A5</td></tr>
+    <tr><td colspan="4">Edge of header strip nearest corner </td></tr>
+    </table>
+    <h2>13x3 header strip</h2>
+    <table class="border">
+      <tr><td colspan="2">Edge of header strip nearest power input to shield.</td>
+          <td rowspan="15">Right edge of strip</td></tr>
+      <tr><td>Servo motor</td><td rowspan="6">It appears that servo motors will be connected
+              to these rows, but there is little information.  It is possible that that two of the
+              pins on each row represent the positive and negative power leads for the servo motor
+              and the third is to pass the PWM output to the control lead of the servo.  It is 
+              unknown which row is connected to each pin on the Arduino, but it should be possible
+              to determine this by experimentation since the only PWM pins are the digital pins
+              3, 5, 6, 9, 10, and 11.</td></tr>
+      <tr><td>Servo motor</td></tr>
+      <tr><td>Servo motor</td></tr>
+      <tr><td>Servo motor</td></tr>    
+      <tr><td>Servo motor</td></tr>
+      <tr><td>Servo motor</td></tr> 
+      <tr><td>Jumper</td><td rowspan="5">The purpose of these jumpers is undocumented, but it
+              is possible that are to select whether to use the primary or alternate pins defined
+              in the WickedMotorShield documentation.</td></tr>
+      <tr><td>Jumper</td></tr>   
+      <tr><td>Jumper</td></tr>   
+      <tr><td>Jumper</td></tr>   
+      <tr><td>Jumper</td></tr> 
+      <tr><td>RC In 2</td><td rowspan="2">These are apparently for use
+              with radio control receivers.</td></tr>
+      <tr><td>RC In 1</td></tr>  
+    </table>
+    <hr />
+    <p><a href="index.html">Return to main page</a></p>
+  </body>
+<html>

@@ -6,21 +6,35 @@
     <head>
     <body>
       <h1>Use with Stepper Motors</h1>
-      <p>This is a discussion of the use of stepper motors such as
-         the 28BYJ-48 with Arduino microcontrollers.  OSEPP has provided a 
+      <p>The Wicked Device Motor Shield is designed for use with bipolar stepping motors.  However,
+         some unipolar stepping motors can be wired as bipolar units so long as the center taps
+         of the two sets of windings are not connected.  The 
          <a href="https://www.osepp.com/downloads/pdf/stepd-01-data-sheet.pdf" target="_blank">
-         wiring diagram of the 28BYJ-48 motor.</a>
-         </p> 
-      <ol>
+         28BYJ-48</a> is a unipolar stepping motor that has the 
+         center taps connected to each other and does not seem suitable for use with this board.</p>
+      <p>There are a number of ways in which stepper motors can be wired.  One article
+         discussing the various schemes 
+         <a href="https://42bots.com/tutorials/stepper-motor-wiring-how-to/" target="_blank">
+         can be found here</a>.  This article discusses the differences between unipolar and
+         bipolar stepper motors, but may require some additional resources in order to understand
+         it further.</p>
+      <h3>References for stepper motors</h3>
+      <ul>
+      <li>STEPPERONLINE ( https://omc-stepperonline.com ) This firm has a wide variety of stepper motors, 
+          both unipolar and bipolar stepper motors.  It may be a useful source of data sheets although you
+          may want to purchase units through other sources to avoid having to deal with customs.</li>
+      <li>Stan, "Stepper motor wiring tutorial",  42 Bots,
+          <a href="https://42bots.com/tutorials/stepper-motor-wiring-how-to/" target="_blank">
+          https://42bots.com/tutorials/stepper-motor-wiring-how-to/</a>.  This tutorial
+          provides information on how to identify the different types of stepper motors and how they
+          should be connected to other equipment.</li>
       <li><a href="https://www.osepp.com">OSEPP</a> has a page discussing
           <a href="https://www.osepp.com/electronic-modules/breakout-boards/93-stepper-motor-driver">
-         the use of the ULN2003A stepper motor board  with the 28BYJ-48 stepper motors.</a>  In
-         this case the orange wire is connected to ground and the pink, red, blue, and yellow
-         wires are connected to the outputs of the ULN2003A chip.</li>
-      <li>The stepper motor can also be used with an Arduino motor control shield such as the
-          Wicked Device MOTO-4 or MOTO-6.  The two coils in the motor are connected to the pink/red and blue/yellow
-          pairs of wires.  The wires for each coil are connected to a seperate motor output on the board.</li>
-      </ol>
+         the use of the ULN2003A unipolar stepper motor board  with 28BYJ-48 unipolar stepper motors.</a></p> 
+      <li>Bill Earl, "All About Stepper Motors",
+          <a href="https://learn.adafruit.com/all-about-stepper-motors/" target="_blank">
+          https://learn.adafruit.com/all-about-stepper-motors/</a></li>
+      </ul> 
       <hr />
       <p><a href="index.html">Return to main page.</a></p>
     </body>

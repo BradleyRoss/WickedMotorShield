@@ -1,0 +1,4 @@
+table.border tr td {   border:1px black solid }
+tr.center td {  text-align:center; border:1px black solid }
+td.narrow { width:0.5in; border:1px black solid; rotate:(-90deg); }
+tr.doublecenter td { text-align:center; border:1px black solid; }
