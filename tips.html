@@ -10,7 +10,7 @@
      of lines using the vi text editor.  The following command
      will remove any contiguous group of one or more spaces from the
      end of every line in the file.<p>
-  <p><code>1,$s/\s*$//</code></p>
+  <p><code>:1,$s/\s*$//</code></p>
   <h2>Jekyll and GitHub</h2>
   <p>The website https://github.io uses <a href="https://en.wikipedia.org/wiki/Jekyll_(software)">Jekyll</a>
      to format the documentation pages.  Unfortunately, there is a conflict concerning the use of
@@ -22,6 +22,9 @@
   </ul>
   <p>It is therefore necessary to have a file named <code>.nojekyll</code> in the root directory of the
      gh_pages branch.</p>
+<h2>Creating the Zip File</h2>
+<p>Set the current directory to the WickedMotorShield directory in the working directory of the GIT repository.</p>
+<p><code> zip -r ../WickedMotorShield examples WickedMotorShield.*<code>
   <hr />
   <p><a href="index.html">Return to main page</a></p>
   </body>

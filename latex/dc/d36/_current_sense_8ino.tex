@@ -1,0 +1,161 @@
+\hypertarget{_current_sense_8ino}{}\doxysection{examples/\+Current\+Sense/\+Current\+Sense.ino File Reference}
+\label{_current_sense_8ino}\index{examples/CurrentSense/CurrentSense.ino@{examples/CurrentSense/CurrentSense.ino}}
+{\ttfamily \#include $<$Wicked\+Motor\+Shield.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_current_sense_8ino_a0d535b4442427b753a70032883886500}{R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+D\+E\+P\+TH}}~16
+\item 
+\#define \mbox{\hyperlink{_current_sense_8ino_a52b56a381e777b55e1b59019d9ee072e}{N\+U\+M\+\_\+\+M\+O\+T\+O\+RS}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_current_sense_8ino_aef8ba079e09828dc9619bb386df728b9}{ring\+Buffer\+Average}} (uint8\+\_\+t index)
+\item 
+void \mbox{\hyperlink{_current_sense_8ino_a7dfd9b79bc5a37d7df40207afbc5431f}{setup}} (void)
+\item 
+void \mbox{\hyperlink{_current_sense_8ino_a0b33edabd7f1c4e4a0bf32c67269be2f}{loop}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} \mbox{\hyperlink{_current_sense_8ino_a875458df1747c60b9a8e453fe3c4e924}{motor1}} (\mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}})
+\item 
+\mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} \mbox{\hyperlink{_current_sense_8ino_a149ad7e60397e3929afa1ea2b806776b}{motor2}} (\mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}})
+\item 
+\mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} \mbox{\hyperlink{_current_sense_8ino_ab140c05661553cf222c743e00525a832}{motor3}} (\mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}})
+\item 
+\mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} \mbox{\hyperlink{_current_sense_8ino_a582482b361cd677b4d3b67e98cf97706}{motor4}} (\mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}})
+\item 
+\mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} $\ast$ \mbox{\hyperlink{_current_sense_8ino_a7675f7eb45b8a26b1792fd81fea18b83}{m}} \mbox{[}$\,$\mbox{]} = \{\&\mbox{\hyperlink{_d_c___motor_8ino_a875458df1747c60b9a8e453fe3c4e924}{motor1}}, \&\mbox{\hyperlink{_d_c___motor_8ino_a149ad7e60397e3929afa1ea2b806776b}{motor2}}, \&\mbox{\hyperlink{_d_c___motor_8ino_ab140c05661553cf222c743e00525a832}{motor3}}, \&\mbox{\hyperlink{_d_c___motor_8ino_a582482b361cd677b4d3b67e98cf97706}{motor4}}\}
+\item 
+const char $\ast$ \mbox{\hyperlink{_current_sense_8ino_ac9a7408300d61e0f6bbdb8b8896b53d6}{m\+\_\+headings}} \mbox{[}$\,$\mbox{]} = \{\char`\"{}M1\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}}\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}}\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}}\char`\"{}\}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_current_sense_8ino_af6d53263670cf5bc8a7ee8da370ab8fb}{ring\+\_\+buffers}} \mbox{[}\mbox{\hyperlink{_current_sense_8ino_a52b56a381e777b55e1b59019d9ee072e}{N\+U\+M\+\_\+\+M\+O\+T\+O\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{_current_sense_8ino_a0d535b4442427b753a70032883886500}{R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+D\+E\+P\+TH}}\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_current_sense_8ino_a702ac8f69330717bb2a43eaaf5e3e69d}{ring\+\_\+buffer\+\_\+index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_current_sense_8ino_a52b56a381e777b55e1b59019d9ee072e}\label{_current_sense_8ino_a52b56a381e777b55e1b59019d9ee072e}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!NUM\_MOTORS@{NUM\_MOTORS}}
+\index{NUM\_MOTORS@{NUM\_MOTORS}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{NUM\_MOTORS}{NUM\_MOTORS}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+M\+O\+T\+O\+RS~4}
+
+
+
+Definition at line 6 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_a0d535b4442427b753a70032883886500}\label{_current_sense_8ino_a0d535b4442427b753a70032883886500}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!RING\_BUFFER\_DEPTH@{RING\_BUFFER\_DEPTH}}
+\index{RING\_BUFFER\_DEPTH@{RING\_BUFFER\_DEPTH}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{RING\_BUFFER\_DEPTH}{RING\_BUFFER\_DEPTH}}
+{\footnotesize\ttfamily \#define R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+D\+E\+P\+TH~16}
+
+
+
+Definition at line 5 of file Current\+Sense.\+ino.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_current_sense_8ino_a0b33edabd7f1c4e4a0bf32c67269be2f}\label{_current_sense_8ino_a0b33edabd7f1c4e4a0bf32c67269be2f}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!loop@{loop}}
+\index{loop@{loop}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_aef8ba079e09828dc9619bb386df728b9}\label{_current_sense_8ino_aef8ba079e09828dc9619bb386df728b9}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!ringBufferAverage@{ringBufferAverage}}
+\index{ringBufferAverage@{ringBufferAverage}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{ringBufferAverage()}{ringBufferAverage()}}
+{\footnotesize\ttfamily uint32\+\_\+t ring\+Buffer\+Average (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_a7dfd9b79bc5a37d7df40207afbc5431f}\label{_current_sense_8ino_a7dfd9b79bc5a37d7df40207afbc5431f}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!setup@{setup}}
+\index{setup@{setup}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file Current\+Sense.\+ino.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_current_sense_8ino_a7675f7eb45b8a26b1792fd81fea18b83}\label{_current_sense_8ino_a7675f7eb45b8a26b1792fd81fea18b83}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!m@{m}}
+\index{m@{m}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}}$\ast$ m\mbox{[}$\,$\mbox{]} = \{\&\mbox{\hyperlink{_d_c___motor_8ino_a875458df1747c60b9a8e453fe3c4e924}{motor1}}, \&\mbox{\hyperlink{_d_c___motor_8ino_a149ad7e60397e3929afa1ea2b806776b}{motor2}}, \&\mbox{\hyperlink{_d_c___motor_8ino_ab140c05661553cf222c743e00525a832}{motor3}}, \&\mbox{\hyperlink{_d_c___motor_8ino_a582482b361cd677b4d3b67e98cf97706}{motor4}}\}}
+
+
+
+Definition at line 12 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_ac9a7408300d61e0f6bbdb8b8896b53d6}\label{_current_sense_8ino_ac9a7408300d61e0f6bbdb8b8896b53d6}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!m\_headings@{m\_headings}}
+\index{m\_headings@{m\_headings}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{m\_headings}{m\_headings}}
+{\footnotesize\ttfamily const char$\ast$ m\+\_\+headings\mbox{[}$\,$\mbox{]} = \{\char`\"{}M1\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}}\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}}\char`\"{}, \char`\"{}\mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}}\char`\"{}\}}
+
+
+
+Definition at line 13 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_a875458df1747c60b9a8e453fe3c4e924}\label{_current_sense_8ino_a875458df1747c60b9a8e453fe3c4e924}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!motor1@{motor1}}
+\index{motor1@{motor1}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{motor1}{motor1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} motor1(\mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}})}
+
+\mbox{\Hypertarget{_current_sense_8ino_a149ad7e60397e3929afa1ea2b806776b}\label{_current_sense_8ino_a149ad7e60397e3929afa1ea2b806776b}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!motor2@{motor2}}
+\index{motor2@{motor2}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{motor2}{motor2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} motor2(\mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}})}
+
+\mbox{\Hypertarget{_current_sense_8ino_ab140c05661553cf222c743e00525a832}\label{_current_sense_8ino_ab140c05661553cf222c743e00525a832}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!motor3@{motor3}}
+\index{motor3@{motor3}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{motor3}{motor3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} motor3(\mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}})}
+
+\mbox{\Hypertarget{_current_sense_8ino_a582482b361cd677b4d3b67e98cf97706}\label{_current_sense_8ino_a582482b361cd677b4d3b67e98cf97706}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!motor4@{motor4}}
+\index{motor4@{motor4}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{motor4}{motor4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}} motor4(\mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}})}
+
+\mbox{\Hypertarget{_current_sense_8ino_a702ac8f69330717bb2a43eaaf5e3e69d}\label{_current_sense_8ino_a702ac8f69330717bb2a43eaaf5e3e69d}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!ring\_buffer\_index@{ring\_buffer\_index}}
+\index{ring\_buffer\_index@{ring\_buffer\_index}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{ring\_buffer\_index}{ring\_buffer\_index}}
+{\footnotesize\ttfamily uint8\+\_\+t ring\+\_\+buffer\+\_\+index}
+
+
+
+Definition at line 28 of file Current\+Sense.\+ino.
+
+\mbox{\Hypertarget{_current_sense_8ino_af6d53263670cf5bc8a7ee8da370ab8fb}\label{_current_sense_8ino_af6d53263670cf5bc8a7ee8da370ab8fb}} 
+\index{CurrentSense.ino@{CurrentSense.ino}!ring\_buffers@{ring\_buffers}}
+\index{ring\_buffers@{ring\_buffers}!CurrentSense.ino@{CurrentSense.ino}}
+\doxysubsubsection{\texorpdfstring{ring\_buffers}{ring\_buffers}}
+{\footnotesize\ttfamily uint16\+\_\+t ring\+\_\+buffers\mbox{[}\mbox{\hyperlink{_current_sense_8ino_a52b56a381e777b55e1b59019d9ee072e}{N\+U\+M\+\_\+\+M\+O\+T\+O\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{_current_sense_8ino_a0d535b4442427b753a70032883886500}{R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+D\+E\+P\+TH}}\mbox{]}}
+
+
+
+Definition at line 27 of file Current\+Sense.\+ino.
+

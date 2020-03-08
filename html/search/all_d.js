@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['version_70',['version',['../class_wicked_motor_shield.html#a25598251b4b2318608cb71a2906c3811',1,'WickedMotorShield']]]
+  ['use_5falternate_5fpins_89',['USE_ALTERNATE_PINS',['../dd/d86/_wicked_motor_shield_8h.html#ac2fbd6bb83288a70e6df2f3903032a1e',1,'WickedMotorShield.h']]]
 ];

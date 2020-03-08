@@ -21,9 +21,10 @@
             power from the motor shield will be passed to the
             Arduino Uno.</td></tr>
     <tr><td>Unknown</td>
-        <td rowspan="2">This may be a means of extending power connections on Arduino Uno
-            to other components.  I have not been able to find any information on
-            these rows of the header strip.</tr>
+        <td rowspan="2">These are connections to the positive 5 volt connections
+            on the Arduino Uno or WildFire micorcontroller according to
+            information from WickedDevice.  Presumably, all four pins are connected to plus
+            5 pins.</td></tr>
     <tr><td>Unknown</td></tr>
     <tr><td>M1 A0 </td>
         <td rowspan="6">Jumper connecting current sensor on motor shield to
@@ -44,21 +45,18 @@
     <p>According to the user's manual, the row of 13 pins closest to the edge of the card is the top
        row and the row furthest from the edge of the card is the bottom row.
     <table class="border">
-      <tr><td colspan="2">Edge of header strip nearest power input to shield.</td>
+      <tr><td colspan="2">Edge of header strip nearest power switch.</td>
           <td rowspan="15">Right edge of strip</td></tr>
-      <tr><td>Servo motor</td><td rowspan="6">These 6 sets can be used to drive servo 
+      <tr><td>Servo motor M3</td><td rowspan="6">These 6 sets can be used to drive servo 
               motors.  The bottom pin of each set is connected to ground.  The middle pin
-              is attached to 5 volts.  (TBR:  Is the middle pin 5 volts or is it
-              attached to the positive lead of the power feed to the shield.) The top pin is
-              then attached to the PWM digital output pin from the Arduino.  (TBR: I assume that
-              the sets for the six possible servos are in order, but it doesn't say which end
-              is M1 and which is M6.)
+              is attached to 5 volts supplied by the Arduino.  The top pin is
+              then attached to the PWM digital output pin from the Arduino.
               </td></tr>
-      <tr><td>Servo motor</td></tr>
-      <tr><td>Servo motor</td></tr>
-      <tr><td>Servo motor</td></tr>    
-      <tr><td>Servo motor</td></tr>
-      <tr><td>Servo motor</td></tr> 
+      <tr><td>Servo motor M5</td></tr>
+      <tr><td>Servo motor M4</td></tr>
+      <tr><td>Servo motor M2</td></tr>    
+      <tr><td>Servo motor M1</td></tr>
+      <tr><td>Servo motor M6</td></tr> 
       <tr><td>Jumper for M1 PWM</td><td rowspan="5">
               According to the user's manual, the alternate pin locations are for use with the
               <a href="https://shop.wickeddevice.com/product/wildfire/" target="blank">

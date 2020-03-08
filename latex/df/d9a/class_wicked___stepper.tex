@@ -1,0 +1,188 @@
+\hypertarget{class_wicked___stepper}{}\doxysection{Wicked\+\_\+\+Stepper Class Reference}
+\label{class_wicked___stepper}\index{Wicked\_Stepper@{Wicked\_Stepper}}
+
+
+{\ttfamily \#include $<$Wicked\+Motor\+Shield.\+h$>$}
+
+Inheritance diagram for Wicked\+\_\+\+Stepper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d9a/class_wicked___stepper}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wicked___stepper_a498d2474ff4cb4e4090d40cb0ae5204f}{Wicked\+\_\+\+Stepper}} (uint16\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a74cae676aeae3538d0ee7159b5d2afe2}{number\+\_\+of\+\_\+steps}}, uint8\+\_\+t \mbox{\hyperlink{class_wicked___stepper_aa1ffaff58d4de939241fb2d87f9a2c08}{m1}}, uint8\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a1b318cf9a37a6735db026ddba4bf6c32}{m2}}, uint8\+\_\+t use\+\_\+alternate\+\_\+pins=0)
+\item 
+void \mbox{\hyperlink{class_wicked___stepper_a8650bc2ad2cde53ca86a1a08af9934cc}{set\+Speed}} (uint32\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a405dbcaeea952727fe86bcaeda4f8f8d}{speed}})
+\item 
+void \mbox{\hyperlink{class_wicked___stepper_a31d37e5de4e7c328642180514458a53d}{step}} (int16\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a74cae676aeae3538d0ee7159b5d2afe2}{number\+\_\+of\+\_\+steps}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wicked___stepper_a54fd8eed9b81a60f180918ea785f0085}{step\+Motor}} (int this\+\_\+step)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_wicked___stepper_aefcd002000b21a05dfe68f890a739f98}{direction}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a405dbcaeea952727fe86bcaeda4f8f8d}{speed}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a3ee2a1dbcdaba55ea7c4a2ad98ddc268}{step\+\_\+delay}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a74cae676aeae3538d0ee7159b5d2afe2}{number\+\_\+of\+\_\+steps}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a1fd725e8bd45f4c63e35b340e3f5a699}{step\+\_\+number}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_wicked___stepper_af3eaab358d1c46f69a9db0394170030c}{last\+\_\+step\+\_\+time}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_wicked___stepper_aa1ffaff58d4de939241fb2d87f9a2c08}{m1}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_wicked___stepper_a1b318cf9a37a6735db026ddba4bf6c32}{m2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 234 of file Wicked\+Motor\+Shield.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wicked___stepper_a498d2474ff4cb4e4090d40cb0ae5204f}\label{class_wicked___stepper_a498d2474ff4cb4e4090d40cb0ae5204f}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!Wicked\_Stepper@{Wicked\_Stepper}}
+\index{Wicked\_Stepper@{Wicked\_Stepper}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{Wicked\_Stepper()}{Wicked\_Stepper()}}
+{\footnotesize\ttfamily Wicked\+\_\+\+Stepper\+::\+Wicked\+\_\+\+Stepper (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{number\+\_\+of\+\_\+steps,  }\item[{uint8\+\_\+t}]{m1,  }\item[{uint8\+\_\+t}]{m2,  }\item[{uint8\+\_\+t}]{use\+\_\+alternate\+\_\+pins = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 524 of file Wicked\+Motor\+Shield.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wicked___stepper_a8650bc2ad2cde53ca86a1a08af9934cc}\label{class_wicked___stepper_a8650bc2ad2cde53ca86a1a08af9934cc}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void Wicked\+\_\+\+Stepper\+::set\+Speed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 545 of file Wicked\+Motor\+Shield.\+cpp.
+
+\mbox{\Hypertarget{class_wicked___stepper_a31d37e5de4e7c328642180514458a53d}\label{class_wicked___stepper_a31d37e5de4e7c328642180514458a53d}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!step@{step}}
+\index{step@{step}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily void Wicked\+\_\+\+Stepper\+::step (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{number\+\_\+of\+\_\+steps }\end{DoxyParamCaption})}
+
+
+
+Definition at line 549 of file Wicked\+Motor\+Shield.\+cpp.
+
+\mbox{\Hypertarget{class_wicked___stepper_a54fd8eed9b81a60f180918ea785f0085}\label{class_wicked___stepper_a54fd8eed9b81a60f180918ea785f0085}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!stepMotor@{stepMotor}}
+\index{stepMotor@{stepMotor}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{stepMotor()}{stepMotor()}}
+{\footnotesize\ttfamily void Wicked\+\_\+\+Stepper\+::step\+Motor (\begin{DoxyParamCaption}\item[{int}]{this\+\_\+step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 586 of file Wicked\+Motor\+Shield.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_wicked___stepper_aefcd002000b21a05dfe68f890a739f98}\label{class_wicked___stepper_aefcd002000b21a05dfe68f890a739f98}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!direction@{direction}}
+\index{direction@{direction}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+\_\+\+Stepper\+::direction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 238 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_af3eaab358d1c46f69a9db0394170030c}\label{class_wicked___stepper_af3eaab358d1c46f69a9db0394170030c}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!last\_step\_time@{last\_step\_time}}
+\index{last\_step\_time@{last\_step\_time}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{last\_step\_time}{last\_step\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t Wicked\+\_\+\+Stepper\+::last\+\_\+step\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 243 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_aa1ffaff58d4de939241fb2d87f9a2c08}\label{class_wicked___stepper_aa1ffaff58d4de939241fb2d87f9a2c08}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!m1@{m1}}
+\index{m1@{m1}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{m1}{m1}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+\_\+\+Stepper\+::m1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 244 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_a1b318cf9a37a6735db026ddba4bf6c32}\label{class_wicked___stepper_a1b318cf9a37a6735db026ddba4bf6c32}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!m2@{m2}}
+\index{m2@{m2}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{m2}{m2}}
+{\footnotesize\ttfamily uint8\+\_\+t Wicked\+\_\+\+Stepper\+::m2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 245 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_a74cae676aeae3538d0ee7159b5d2afe2}\label{class_wicked___stepper_a74cae676aeae3538d0ee7159b5d2afe2}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!number\_of\_steps@{number\_of\_steps}}
+\index{number\_of\_steps@{number\_of\_steps}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{number\_of\_steps}{number\_of\_steps}}
+{\footnotesize\ttfamily uint16\+\_\+t Wicked\+\_\+\+Stepper\+::number\+\_\+of\+\_\+steps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 241 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_a405dbcaeea952727fe86bcaeda4f8f8d}\label{class_wicked___stepper_a405dbcaeea952727fe86bcaeda4f8f8d}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!speed@{speed}}
+\index{speed@{speed}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily uint16\+\_\+t Wicked\+\_\+\+Stepper\+::speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 239 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_a3ee2a1dbcdaba55ea7c4a2ad98ddc268}\label{class_wicked___stepper_a3ee2a1dbcdaba55ea7c4a2ad98ddc268}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!step\_delay@{step\_delay}}
+\index{step\_delay@{step\_delay}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{step\_delay}{step\_delay}}
+{\footnotesize\ttfamily uint32\+\_\+t Wicked\+\_\+\+Stepper\+::step\+\_\+delay\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 240 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{class_wicked___stepper_a1fd725e8bd45f4c63e35b340e3f5a699}\label{class_wicked___stepper_a1fd725e8bd45f4c63e35b340e3f5a699}} 
+\index{Wicked\_Stepper@{Wicked\_Stepper}!step\_number@{step\_number}}
+\index{step\_number@{step\_number}!Wicked\_Stepper@{Wicked\_Stepper}}
+\doxysubsubsection{\texorpdfstring{step\_number}{step\_number}}
+{\footnotesize\ttfamily uint16\+\_\+t Wicked\+\_\+\+Stepper\+::step\+\_\+number\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 242 of file Wicked\+Motor\+Shield.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_wicked_motor_shield_8h}{Wicked\+Motor\+Shield.\+h}}\item 
+\mbox{\hyperlink{_wicked_motor_shield_8cpp}{Wicked\+Motor\+Shield.\+cpp}}\end{DoxyCompactItemize}

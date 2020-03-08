@@ -66,7 +66,40 @@ $(function() {
 <div class="title">WickedMotorShield.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_wicked_motor_shield_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="_wicked_motor_shield_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  @mainpage</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  This is the code for the motor shield by Wicked Device.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  The following are my questions about the code.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  -  It is assumed that this code applies to both the MOTO4 (4 DC motors)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *     and MOTO6 (6 DC motors).  Is this correct, or are any modifications</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *     required?</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *  -  What are hard brake and soft brake?  Does hard brake refer to</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *     dynamic braking where the leads of the DC motor are wired together?</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *     Does the setting of the pulse width modulation (PWM pin) affect the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *     percentage of the time that the leads are connected?  Does soft</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *     brake mean that the leads to the DC motor are isolated from grounds</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *     and voltage sources.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  -  In Wicked_DCMotor#setBrake(), the value of the previous value of</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *     the direction bit should be copied to WickedMotorShield#old_dir only</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *     if the brake bit was previously clear (indicating BRAKE_OFF) and the BRAKE_HARD or</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *     BRAKE_SOFT condition is the new brake condition.  It appears that the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *     WickedMotorShield#old_dir value is currently updated if going from</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *     BRAKE_SOFT to BRAKE_HARD or from BRAKE_HARD to BRAKE_SOFT.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  -  It appears that either the brake status should be set to #BRAKE_OFF</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *     when the direction is set or no action should be taken if the brake status</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *     is not #BRAKE_OFF.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *  -  Are the alternate pins for use with the Arduino Mega?  If the alternate</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *     pins are to be used, how is this represented in the position of the</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *     the jumpers?  Is some other method used to indicate the use of</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *     alternate pin locations?</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  -  Can I use the two RC in pins to provide for two way communication using I2C</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *     with another device such as a Bluetooth serial card?  Should the configuration</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *     of the pins be removed from the constructor since the motor shield library does</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *     not use them.  The pins would then be configured by the software that</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *     communicates with the outside world.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *  @file</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/* Copyright (C) 2014 by Victor Aprea &lt;victor.aprea@wickeddevice.com&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">Permission is hereby granted, free of charge, to any person obtaining</span></div>
@@ -88,24 +121,98 @@ $(function() {
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_wicked_motor_shield_8h.html">WickedMotorShield.h</a>&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_wicked_motor_shield_8h.html">WickedMotorShield.h</a>&quot;</span><span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> * Clock pin used for loading shift registers.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="_wicked_motor_shield_8cpp.html#aba3b3ba52d33a415d6664f570814891c">   60</a></span>&#160;<span class="preprocessor">#define SERIAL_CLOCK_PIN (2)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> *  Latch pin used for loading shift registers.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="_wicked_motor_shield_8cpp.html#a7a57131e103c79d8987697fbcfcb093f">   64</a></span>&#160;<span class="preprocessor">#define SERIAL_LATCH_PIN (7)</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="_wicked_motor_shield_8cpp.html#a50eee01a64ad4268daea5d750482551d">   66</a></span>&#160;<span class="preprocessor">#define OPERATION_CLEAR  (0)</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="_wicked_motor_shield_8cpp.html#a6985462298d759f9638ad79bda646658">   67</a></span>&#160;<span class="preprocessor">#define OPERATION_SET    (1)</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="_wicked_motor_shield_8cpp.html#a1d4650e822071c3fce70378585389e46">   68</a></span>&#160;<span class="preprocessor">#define OPERATION_NONE   (2)</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a> = 0xff;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a> = 0xff;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#af195d531882a8b073d0e715eb8a4b054">WickedMotorShield::SERIAL_DATA_PIN</a> = 12;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#ab5842957bce402c5926d63d898b5eef7">WickedMotorShield::RCIN1_PIN</a> = 4;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a693ed5a373f9c93516d53905d85c8fcc">WickedMotorShield::RCIN2_PIN</a> = 8;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#acd10647e9753c734bbb46923ab191149">WickedMotorShield::M1_PWM_PIN</a> = 11;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#acc05c20236dc67a0979f7e0c66c3b7e8">WickedMotorShield::M6_PWM_PIN</a> = 3;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> *  Contains direction and brake status for motors</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *  #M1, #M2, #M3, and #M4.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">WickedMotorShield::first_shift_register</a> = 0xff;<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> *  Contains direction and brake status for motors</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> *  #M5 and #M6.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">WickedMotorShield::second_shift_register</a> = 0xff;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> *  Digital Arduino pin used to send data to motor shield.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> *  Pin 12 for standard pins, pin 0 for alternate pins.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#af195d531882a8b073d0e715eb8a4b054">WickedMotorShield::SERIAL_DATA_PIN</a> = 12;<span class="comment"></span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> *   Digital pin used for Radio Control Input Pin 1.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> *   Pin 4 used for standard pins, pin 3 for alternate pins.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#ab5842957bce402c5926d63d898b5eef7">WickedMotorShield::RCIN1_PIN</a> = 4;<span class="comment"></span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> *  Digital pin used for Radio Control Input Pin 2.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> *  Pin 8 used for standard pins, pin 11 for alternate pins.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a693ed5a373f9c93516d53905d85c8fcc">WickedMotorShield::RCIN2_PIN</a> = 8;<span class="comment"></span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * Digital pin for M1 PWM (pulse width modulation).</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * Pin 11 for standard pins, use pin 8 for alternate pins.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#acd10647e9753c734bbb46923ab191149">WickedMotorShield::M1_PWM_PIN</a> = 11;<span class="comment"></span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> *  Digital pin for M6 PWM (pulse width modulation).</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> *  Pin 3 for standard pins, pin 4 for alternate pins.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#acc05c20236dc67a0979f7e0c66c3b7e8">WickedMotorShield::M6_PWM_PIN</a> = 3;<span class="comment"></span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> *  Contains the old value of the direction bit if the</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *  value of the brake bit is changed from 0 to 1.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> *  When the brake bit is changed from 0 to 1, the</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> *  direction bit indicates whether it is BRAKE_SOFT or</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> *  BRAKE_HARD.  If the direction bit wasn&#39;t copied to</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> *  this array, the value would be lost.</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#aac68eff7dd860f3811be0f290d70c0bc">WickedMotorShield::old_dir</a>[6] = {0,0,0,0,0,0};</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> * Constructor for WickedMotorShield, which has Wicked_DCMotor and</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> * Wicked_Stepper as subclasses.</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment"> * @param use_alternate_pins if the value is equal to #USE_ALTERNATE_PINS,</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"> *        the values used for WickedMotorShield#SERIAL_DATA_PIN,</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"> *        WickedMotorShield#RCIN1_PIN, WickedMotorShield#RCIN2_PIN,</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"> *        WickedMotorShield#M1_PWM_PIN, and WickedMotorShield#M6_PWM_PIN</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"> *        changed to an alternate set.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"> * &lt;table&gt;</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;Symbol&lt;/td&gt;&lt;td&gt;Standard&lt;/td&gt;&lt;td&gt;Alternate&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;WickedMotorShield#SERIAL_DATA_PIN&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;WickedMotorShield#RCIN1_PIN&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;WickedMotorShield#RCIN2_PIN&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;WickedMotorShield#M1_PWM_PIN&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;#M2_PWM_PIN&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;#M3_PWM_PIN&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;#M4_PWM_PIN&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;#M5_PWM_PIN&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"> * &lt;tr&gt;&lt;td&gt;WickedMotorShield#M6_PWM_PIN&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"> * &lt;/table&gt;</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"> * &lt;p&gt;Pins 4 and 8 do not support PWM on Arduino Uno R3 microcontroller board.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"> *    However, all of these pins support PWM on the</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"> *    &lt;a href=&quot;https://www.electroschematics.com/arduino-mega-2560-pinout/&quot; target=&quot;_blank&quot;&gt;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"> *    Arduino Mega&lt;/a&gt;&lt;/p&gt;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a82426e4064f39a92bbf644bbdef7ef77">  148</a></span>&#160;<a class="code" href="class_wicked_motor_shield.html#a82426e4064f39a92bbf644bbdef7ef77">WickedMotorShield::WickedMotorShield</a>(uint8_t use_alternate_pins){</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">if</span>( use_alternate_pins == <a class="code" href="_wicked_motor_shield_8h.html#ac2fbd6bb83288a70e6df2f3903032a1e">USE_ALTERNATE_PINS</a>){</div>
@@ -130,13 +237,29 @@ $(function() {
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">// load the initial values so the motors are set to a brake state initially</span></div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="class_wicked_motor_shield.html#a94cee42254233ed301b3e6ccb7ba0b2c">load_shift_register</a>();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"> *  Load the contents of second_shift_register and first_shift_register to the</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"> *  motor shield using SERIAL_LATCH_PIN, SERIAL_DATA_PIN, and SERIAL_CLOCK_PIN</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment"> *  pins.</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"> *  Data is only moved from the memory values on the Arduino board to the</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"> *  motor shield.  No data is moved in the other direction.</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a94cee42254233ed301b3e6ccb7ba0b2c">  181</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_wicked_motor_shield.html#a94cee42254233ed301b3e6ccb7ba0b2c">WickedMotorShield::load_shift_register</a>(<span class="keywordtype">void</span>){</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  digitalWrite(<a class="code" href="_wicked_motor_shield_8cpp.html#a7a57131e103c79d8987697fbcfcb093f">SERIAL_LATCH_PIN</a>, LOW);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  shiftOut(<a class="code" href="class_wicked_motor_shield.html#af195d531882a8b073d0e715eb8a4b054">SERIAL_DATA_PIN</a>, <a class="code" href="_wicked_motor_shield_8cpp.html#aba3b3ba52d33a415d6664f570814891c">SERIAL_CLOCK_PIN</a>, LSBFIRST, <a class="code" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">second_shift_register</a>);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  shiftOut(<a class="code" href="class_wicked_motor_shield.html#af195d531882a8b073d0e715eb8a4b054">SERIAL_DATA_PIN</a>, <a class="code" href="_wicked_motor_shield_8cpp.html#aba3b3ba52d33a415d6664f570814891c">SERIAL_CLOCK_PIN</a>, LSBFIRST, <a class="code" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">first_shift_register</a>);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  digitalWrite(<a class="code" href="_wicked_motor_shield_8cpp.html#a7a57131e103c79d8987697fbcfcb093f">SERIAL_LATCH_PIN</a>, HIGH);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"> *  Get the shift register information for a specific motor.</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"> *  @param motor_number  Number of motor for which information is desired.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"> *  The information for motors M1 to M4 are contained in the first shift</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"> *  register.  The information for motors M5 and M6 is contained in the</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"> *  second shift register.</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">  195</a></span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">WickedMotorShield::get_shift_register_value</a>(uint8_t motor_number){</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  uint8_t temp = <a class="code" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">first_shift_register</a>;</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">if</span>(motor_number == <a class="code" href="_wicked_motor_shield_8h.html#aaae035dfc29e91b0d2b941a446546631">M5</a> || motor_number == <a class="code" href="_wicked_motor_shield_8h.html#a3a58ea008b2446f96146735635b03373">M6</a>){</div>
@@ -144,7 +267,13 @@ $(function() {
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"> *  Copy the shift register data for the specified motor into the correct data structure.</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment"> *  @param  motor_number number of motor for which data has been modified.</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment"> *  @param  value  information to be moved to shift register.</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078">  209</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078">WickedMotorShield::set_shift_register_value</a>(uint8_t motor_number, uint8_t value){</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <span class="keywordflow">if</span>(motor_number == <a class="code" href="_wicked_motor_shield_8h.html#aaae035dfc29e91b0d2b941a446546631">M5</a> || motor_number == <a class="code" href="_wicked_motor_shield_8h.html#a3a58ea008b2446f96146735635b03373">M6</a>){</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d">second_shift_register</a> = value;</div>
@@ -153,7 +282,25 @@ $(function() {
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <a class="code" href="class_wicked_motor_shield.html#a8f8978cccce6ed6781a5c0a94a02f5b3">first_shift_register</a> = value;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  }</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">  * Carry out bitwise or/and operation .</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">  * @param shift_register_value Address of shift register to be altered.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">  *     This will be the address of either WickedDeviceShield#first_shift_register</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">  *     or WickedDeviceShield#second_shift_register.  Only the bit whose location is</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">  *     given by the mask parameter will be altered.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">  * @param mask with bit set in position to be changed.</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">  * @param operation flag indicating whether bit to be set (#OPERATION_SET)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">  *     or cleared (#OPERATION_CLEAR).  A value of #OPERATION_NONE indicates</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">  *     that no action is to be taken.</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">  *</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">  * If operation clear do a bitwise and operation on the shift register byte</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">  * and the mask with all bits inverted.  In the inverted mask, the bit to be cleared</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">  * is 0 and the other bits are 1.</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">  *</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">  * If operation set do a bitwise or operation on the shift register byte and the</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">  * mask.  The mask has a one in the bit of the shift register to be set to be set.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">  */</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#abbe45be72eddd30505401af152e44609">  236</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_wicked_motor_shield.html#abbe45be72eddd30505401af152e44609">WickedMotorShield::apply_mask</a>(uint8_t * shift_register_value, uint8_t mask, uint8_t operation){</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="keywordflow">switch</span>(operation){</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordflow">case</span> <a class="code" href="_wicked_motor_shield_8cpp.html#a50eee01a64ad4268daea5d750482551d">OPERATION_CLEAR</a>:</div>
@@ -166,7 +313,13 @@ $(function() {
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// do nothing</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment"> *  Apply a mask to an eight bit integer using bitwise and.</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"> *  @param shift_register_value byte to which mask is to be applied</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"> *  @param mask byte containing mask to be applied</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment"> *  @return 0 if bit indicated by mask is 0, otherwise return 1</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a16f3a1c934021dd75f80c0d4e075c59b">  255</a></span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a16f3a1c934021dd75f80c0d4e075c59b">WickedMotorShield::filter_mask</a>(uint8_t shift_register_value, uint8_t mask){</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  <span class="keywordflow">if</span>((shift_register_value &amp; mask) == 0){</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> 0;</div>
@@ -225,7 +378,21 @@ $(function() {
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    analogWrite(<a class="code" href="class_wicked_motor_shield.html#acc05c20236dc67a0979f7e0c66c3b7e8">M6_PWM_PIN</a>, pwm_val);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="comment"> * Set the value for the direction in Mx_DIR_MASK bit and the element of the</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment"> * old_dir directory.</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment"> * @param motor_number number of motor for which direction is to be set</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment"> * @param direction value to be set for direction (#DIR_CW or #DIR_CCW).  The</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="comment"> *        value of DIR_CW is 1 while the value for DIR_CCW is set to 0.</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment"> * Change Jan, 2020 - No action to be taken if brake bit is set.</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment"> * This needs to be reviewed.  Either the brake status should be set to #BRAKE_OFF</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment"> * when the direction is set or no action should be taken if the brake status</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment"> * is not #BRAKE_OFF.  Should the brake status always be changed to BRAKE_OFF</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment"> * if this method is called.</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a78bd74b57656b8903c6b098b04db6067">  328</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_wicked_motor_shield.html#a78bd74b57656b8903c6b098b04db6067">WickedMotorShield::setDirectionData</a>(uint8_t motor_number, uint8_t direction){</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  uint8_t shift_register_value = <a class="code" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">get_shift_register_value</a>(motor_number);</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  uint8_t * p_shift_register_value = &amp;shift_register_value;</div>
@@ -270,7 +437,17 @@ $(function() {
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  }</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <a class="code" href="class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078">set_shift_register_value</a>(motor_number, shift_register_value);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="comment"> * Set the contents of the shift_registers to indicate the desired brake condition.</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"> * @param motor_number number of motor for which data is to be set</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="comment"> * @param brake_type value is #BRAKE_OFF, BRAKE_HARD, or #BRAKE_SOFT.  Value  is</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="comment"> *                   the new brake condition.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="comment"> * Change Jan, 2020 :  The value of #WickedMotorShield#old_dir is only changed if brake status is</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"> *     changed from #BRAKE_OFF to (#BRAKE_HARD or #BRAKE_SOFT) or from</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment"> *     (#BRAKE_HARD or #BRAKE_SOFT) to #BRAKE_OFF.</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a75209b54839906998d254a670de41af2">  383</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_wicked_motor_shield.html#a75209b54839906998d254a670de41af2">WickedMotorShield::setBrakeData</a>(uint8_t motor_number, uint8_t brake_type){</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  uint8_t shift_register_value = <a class="code" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">get_shift_register_value</a>(motor_number);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  uint8_t * p_shift_register_value = &amp;shift_register_value;</div>
@@ -342,7 +519,16 @@ $(function() {
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;  }</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;  <a class="code" href="class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078">set_shift_register_value</a>(motor_number, shift_register_value);</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="comment"> * Return motor direction for a specific motor.</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment"> * @param motor_number integer representing motor</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="comment"> * @return shift register value for motor having done a bitwise</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="comment"> *         and operation with the direction mask for the motor.  Value will</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment"> *         zero if direction bit is set (counter clockwise).</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment"> *         Otherwise it will be greater than zero</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="comment"> *         if direction bit is not set (clockwise).</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00464"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a8c0a083ea51c8c82efd9a96743e14724">  464</a></span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a8c0a083ea51c8c82efd9a96743e14724">WickedMotorShield::get_motor_directionM</a>(uint8_t motor_number){</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;  uint8_t shift_register_value = <a class="code" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">get_shift_register_value</a>(motor_number);</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
@@ -363,7 +549,15 @@ $(function() {
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  <span class="keywordflow">return</span> 0xff; <span class="comment">// indicate error - bad motor_number argument</span></div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;}</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;}<span class="comment"></span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="comment"> * Return motor brake status for a specific motor.</span></div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="comment"> * @param motor_number integer representing motor</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="comment"> * @return shift register value for motor having done a bitwise</span></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;<span class="comment"> *         and operation with the brake mask for the motor.  This</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment"> *         will be zero if the brake bit is not set and greater</span></div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="comment"> *         than zero if the brake bit is set.</span></div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a2927f708ec576c8e66fc08500d4e682a">  493</a></span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a2927f708ec576c8e66fc08500d4e682a">WickedMotorShield::get_motor_brakeM</a>(uint8_t motor_number){</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  uint8_t shift_register_value = <a class="code" href="class_wicked_motor_shield.html#ad676ad895cba921bdba62740486293ff">get_shift_register_value</a>(motor_number);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
@@ -385,7 +579,10 @@ $(function() {
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  <span class="keywordflow">return</span> 0xff; <span class="comment">// indicate error - bad motor_number argument</span></div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;}</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;<span class="comment"> *  Version number is hard-coded to a value of 1.</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00518"></a><span class="lineno"><a class="line" href="class_wicked_motor_shield.html#a25598251b4b2318608cb71a2906c3811">  518</a></span>&#160;uint8_t <a class="code" href="class_wicked_motor_shield.html#a25598251b4b2318608cb71a2906c3811">WickedMotorShield::version</a>(<span class="keywordtype">void</span>){</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div>

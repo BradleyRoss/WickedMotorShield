@@ -1,4 +1,24 @@
 var searchData=
 [
-  ['use_5falternate_5fpins_69',['USE_ALTERNATE_PINS',['../_wicked_motor_shield_8h.html#ac2fbd6bb83288a70e6df2f3903032a1e',1,'WickedMotorShield.h']]]
+  ['second_5fshift_5fregister_68',['second_shift_register',['../d5/d25/class_wicked_motor_shield.html#a663079e19bde880f77a2c3968afcac5d',1,'WickedMotorShield']]],
+  ['serial_5fclock_5fpin_69',['SERIAL_CLOCK_PIN',['../d1/dff/_wicked_motor_shield_8cpp.html#aba3b3ba52d33a415d6664f570814891c',1,'SERIAL_CLOCK_PIN():&#160;WickedMotorShield.cpp'],['../dd/d86/_wicked_motor_shield_8h.html#aba3b3ba52d33a415d6664f570814891c',1,'SERIAL_CLOCK_PIN():&#160;WickedMotorShield.h']]],
+  ['serial_5fdata_5fpin_70',['SERIAL_DATA_PIN',['../d5/d25/class_wicked_motor_shield.html#af195d531882a8b073d0e715eb8a4b054',1,'WickedMotorShield']]],
+  ['serial_5flatch_5fpin_71',['SERIAL_LATCH_PIN',['../d1/dff/_wicked_motor_shield_8cpp.html#a7a57131e103c79d8987697fbcfcb093f',1,'SERIAL_LATCH_PIN():&#160;WickedMotorShield.cpp'],['../dd/d86/_wicked_motor_shield_8h.html#a7a57131e103c79d8987697fbcfcb093f',1,'SERIAL_LATCH_PIN():&#160;WickedMotorShield.h']]],
+  ['set_5fshift_5fregister_5fvalue_72',['set_shift_register_value',['../d5/d25/class_wicked_motor_shield.html#a0b92205bb3dede76817a6d52d54cc078',1,'WickedMotorShield']]],
+  ['setbrake_73',['setBrake',['../df/dc0/class_wicked___d_c_motor.html#a39e60ca4084d3134ec693815fe2154e1',1,'Wicked_DCMotor']]],
+  ['setbrakedata_74',['setBrakeData',['../d5/d25/class_wicked_motor_shield.html#a75209b54839906998d254a670de41af2',1,'WickedMotorShield']]],
+  ['setdirection_75',['setDirection',['../df/dc0/class_wicked___d_c_motor.html#acb4ae19523f5d19759a18fdd17055b45',1,'Wicked_DCMotor']]],
+  ['setdirectiondata_76',['setDirectionData',['../d5/d25/class_wicked_motor_shield.html#a78bd74b57656b8903c6b098b04db6067',1,'WickedMotorShield']]],
+  ['setspeed_77',['setSpeed',['../df/d9a/class_wicked___stepper.html#a8650bc2ad2cde53ca86a1a08af9934cc',1,'Wicked_Stepper::setSpeed()'],['../df/dc0/class_wicked___d_c_motor.html#a19b9964c24ac43d18c97819bc177360e',1,'Wicked_DCMotor::setSpeed()']]],
+  ['setspeedm_78',['setSpeedM',['../d5/d25/class_wicked_motor_shield.html#ad78f766721ebe540389b823de2404f9e',1,'WickedMotorShield']]],
+  ['setup_79',['setup',['../dc/d36/_current_sense_8ino.html#a7dfd9b79bc5a37d7df40207afbc5431f',1,'setup(void):&#160;CurrentSense.ino'],['../de/d72/_d_c___motor_8ino.html#a7dfd9b79bc5a37d7df40207afbc5431f',1,'setup(void):&#160;DC_Motor.ino'],['../d0/df8/_stepper___motor_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;Stepper_Motor.ino']]],
+  ['speed_80',['speed',['../df/d9a/class_wicked___stepper.html#a405dbcaeea952727fe86bcaeda4f8f8d',1,'Wicked_Stepper']]],
+  ['step_81',['step',['../df/d9a/class_wicked___stepper.html#a31d37e5de4e7c328642180514458a53d',1,'Wicked_Stepper']]],
+  ['step_5fdelay_82',['step_delay',['../df/d9a/class_wicked___stepper.html#a3ee2a1dbcdaba55ea7c4a2ad98ddc268',1,'Wicked_Stepper']]],
+  ['step_5fnumber_83',['step_number',['../df/d9a/class_wicked___stepper.html#a1fd725e8bd45f4c63e35b340e3f5a699',1,'Wicked_Stepper']]],
+  ['stepcount_84',['stepCount',['../d0/df8/_stepper___motor_8ino.html#ac208e38a6cf3eecfb9d1522e950ed956',1,'Stepper_Motor.ino']]],
+  ['stepmotor_85',['stepMotor',['../df/d9a/class_wicked___stepper.html#a54fd8eed9b81a60f180918ea785f0085',1,'Wicked_Stepper']]],
+  ['stepper_86',['stepper',['../d0/df8/_stepper___motor_8ino.html#abd31a656097918725384e92bc48d581b',1,'Stepper_Motor.ino']]],
+  ['stepper_5fmotor_2eino_87',['Stepper_Motor.ino',['../d0/df8/_stepper___motor_8ino.html',1,'']]],
+  ['stepsperrevolution_88',['stepsPerRevolution',['../d0/df8/_stepper___motor_8ino.html#a0dffab4a0297ba1dfc85381688a235bb',1,'Stepper_Motor.ino']]]
 ];

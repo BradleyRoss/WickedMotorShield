@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wickedmotorshield_2ecpp_81',['WickedMotorShield.cpp',['../_wicked_motor_shield_8cpp.html',1,'']]],
-  ['wickedmotorshield_2eh_82',['WickedMotorShield.h',['../_wicked_motor_shield_8h.html',1,'']]]
+  ['dc_5fmotor_2eino_101',['DC_Motor.ino',['../de/d72/_d_c___motor_8ino.html',1,'']]]
 ];

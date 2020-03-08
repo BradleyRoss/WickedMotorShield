@@ -1,0 +1,465 @@
+\hypertarget{_wicked_motor_shield_8h}{}\doxysection{Wicked\+Motor\+Shield.\+h File Reference}
+\label{_wicked_motor_shield_8h}\index{WickedMotorShield.h@{WickedMotorShield.h}}
+{\ttfamily \#include $<$W\+Program.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_wicked_motor_shield}{Wicked\+Motor\+Shield}}
+\item 
+class \mbox{\hyperlink{class_wicked___stepper}{Wicked\+\_\+\+Stepper}}
+\item 
+class \mbox{\hyperlink{class_wicked___d_c_motor}{Wicked\+\_\+\+D\+C\+Motor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a6d4cfbbc36469e74e77804b0c3c9d0ba}{D\+I\+R\+\_\+\+C\+CW}}~(0)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a32aebb0062f8833d08b204b072721245}{D\+I\+R\+\_\+\+CW}}~(1)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}{B\+R\+A\+K\+E\+\_\+\+O\+FF}}~(0)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a895ab019781500274ce305b613836989}{B\+R\+A\+K\+E\+\_\+\+H\+A\+RD}}~(1)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}{B\+R\+A\+K\+E\+\_\+\+S\+O\+FT}}~(2)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}}~(0)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}}~(1)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}}~(2)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}}~(3)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}{M5}}~(4)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}{M6}}~(5)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a5d8c4230de6e2ceaf74214420833784c}{M4\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x80)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ae82f21903cccd3df8f31b1b58ee67c59}{M4\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x40)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x20)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x10)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ae5a3055b7172030f26585a12d923dd6f}{M2\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x08)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a9e45e01ba748c4cadd1b535cb0697e83}{M2\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x04)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ac6e59a371c648140c7015ef96c77b654}{M3\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x02)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_aa29ead8f87002b41e0bcaeab69c46e90}{M3\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a1adcc8b9c224ed86cafa1ed6a34daf35}{M6\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x80)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a75f748bbb0d55f55c832246ef7c387c4}{M6\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x40)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a873b1fb0ac4636aca1a3e15ea3288c12}{M5\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}}~(0x20)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a05b8a98760ae81aff795b5385b521a9e}{M5\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}}~(0x10)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a3911dd0bc93be1df4adb8138085b8ec6}{M2\+\_\+\+P\+W\+M\+\_\+\+P\+IN}}~(9)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a95fbfbabeee0b378056994e333d81aa8}{M3\+\_\+\+P\+W\+M\+\_\+\+P\+IN}}~(5)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a4dbaa06d439a3a0ff40b45d86b959584}{M4\+\_\+\+P\+W\+M\+\_\+\+P\+IN}}~(10)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_aefb34c239b0137ef73cc9b5a18809c10}{M5\+\_\+\+P\+W\+M\+\_\+\+P\+IN}}~(6)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a565f390ec42eb8a7db196d31becf14a9}{R\+C\+I\+N1}}~(1)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a1dfc03039b2470c2dd578bda60ee7fba}{R\+C\+I\+N2}}~(2)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_aba3b3ba52d33a415d6664f570814891c}{S\+E\+R\+I\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+IN}}~(2)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a7a57131e103c79d8987697fbcfcb093f}{S\+E\+R\+I\+A\+L\+\_\+\+L\+A\+T\+C\+H\+\_\+\+P\+IN}}~(7)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a50eee01a64ad4268daea5d750482551d}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+C\+L\+E\+AR}}~(0)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a6985462298d759f9638ad79bda646658}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET}}~(1)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_a1d4650e822071c3fce70378585389e46}{O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+NE}}~(2)
+\item 
+\#define \mbox{\hyperlink{_wicked_motor_shield_8h_ac2fbd6bb83288a70e6df2f3903032a1e}{U\+S\+E\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+P\+I\+NS}}~(1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a895ab019781500274ce305b613836989}\label{_wicked_motor_shield_8h_a895ab019781500274ce305b613836989}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!BRAKE\_HARD@{BRAKE\_HARD}}
+\index{BRAKE\_HARD@{BRAKE\_HARD}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{BRAKE\_HARD}{BRAKE\_HARD}}
+{\footnotesize\ttfamily \#define B\+R\+A\+K\+E\+\_\+\+H\+A\+RD~(1)}
+
+Integer value defining \char`\"{}brake hard\char`\"{}. 
+
+Definition at line 43 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}\label{_wicked_motor_shield_8h_ad52174b3c7a0600af22b33b0f180eb67}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!BRAKE\_OFF@{BRAKE\_OFF}}
+\index{BRAKE\_OFF@{BRAKE\_OFF}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{BRAKE\_OFF}{BRAKE\_OFF}}
+{\footnotesize\ttfamily \#define B\+R\+A\+K\+E\+\_\+\+O\+FF~(0)}
+
+Integer value defining \char`\"{}brake off\char`\"{}. 
+
+Definition at line 39 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}\label{_wicked_motor_shield_8h_a7b6e4d7efd531af04b641e7fca3408c7}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!BRAKE\_SOFT@{BRAKE\_SOFT}}
+\index{BRAKE\_SOFT@{BRAKE\_SOFT}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{BRAKE\_SOFT}{BRAKE\_SOFT}}
+{\footnotesize\ttfamily \#define B\+R\+A\+K\+E\+\_\+\+S\+O\+FT~(2)}
+
+Integer value defining \char`\"{}brake soft\char`\"{}. 
+
+Definition at line 47 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a6d4cfbbc36469e74e77804b0c3c9d0ba}\label{_wicked_motor_shield_8h_a6d4cfbbc36469e74e77804b0c3c9d0ba}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!DIR\_CCW@{DIR\_CCW}}
+\index{DIR\_CCW@{DIR\_CCW}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{DIR\_CCW}{DIR\_CCW}}
+{\footnotesize\ttfamily \#define D\+I\+R\+\_\+\+C\+CW~(0)}
+
+Integer value defining counterclockwise rotation. (Value = 0) 
+
+Definition at line 35 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a32aebb0062f8833d08b204b072721245}\label{_wicked_motor_shield_8h_a32aebb0062f8833d08b204b072721245}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!DIR\_CW@{DIR\_CW}}
+\index{DIR\_CW@{DIR\_CW}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{DIR\_CW}{DIR\_CW}}
+{\footnotesize\ttfamily \#define D\+I\+R\+\_\+\+CW~(1)}
+
+Integer value defining clockwise rotation. (Value = 1) 
+
+Definition at line 37 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}\label{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M1@{M1}}
+\index{M1@{M1}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M1}{M1}}
+{\footnotesize\ttfamily \#define M1~(0)}
+
+Integer value identifying motor M1. 
+
+Definition at line 51 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}\label{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M1\_BRAKE\_MASK@{M1\_BRAKE\_MASK}}
+\index{M1\_BRAKE\_MASK@{M1\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M1\_BRAKE\_MASK}{M1\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x10)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is zero, brake is set to B\+R\+A\+K\+E\+\_\+\+O\+FF and M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK bit indicates direction of rotation. If M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK bit is one, M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK indicates whether hard brake or soft brake.
+
+There are equivalent macro definitions B\+R\+A\+K\+E\+\_\+\+M\+A\+SK and D\+I\+R\+\_\+\+M\+A\+SK for the other motors (M2, M3, M4, M5, M6). 
+
+Definition at line 108 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}\label{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M1\_DIR\_MASK@{M1\_DIR\_MASK}}
+\index{M1\_DIR\_MASK@{M1\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M1\_DIR\_MASK}{M1\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x20)}
+
+Shows location of bit for brake status for motor \mbox{\hyperlink{_wicked_motor_shield_8h_ac597abe7cf610f262f7aaec53ed1d413}{M1}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} 
+
+Definition at line 94 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}\label{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M2@{M2}}
+\index{M2@{M2}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M2}{M2}}
+{\footnotesize\ttfamily \#define M2~(1)}
+
+Integer value identifying motor M2. 
+
+Definition at line 55 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a9e45e01ba748c4cadd1b535cb0697e83}\label{_wicked_motor_shield_8h_a9e45e01ba748c4cadd1b535cb0697e83}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M2\_BRAKE\_MASK@{M2\_BRAKE\_MASK}}
+\index{M2\_BRAKE\_MASK@{M2\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M2\_BRAKE\_MASK}{M2\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M2\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x04)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 122 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ae5a3055b7172030f26585a12d923dd6f}\label{_wicked_motor_shield_8h_ae5a3055b7172030f26585a12d923dd6f}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M2\_DIR\_MASK@{M2\_DIR\_MASK}}
+\index{M2\_DIR\_MASK@{M2\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M2\_DIR\_MASK}{M2\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M2\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x08)}
+
+Shows location of bit for direction status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a2a187ef3afced0eb4c4cb99515e5429c}{M2}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 115 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a3911dd0bc93be1df4adb8138085b8ec6}\label{_wicked_motor_shield_8h_a3911dd0bc93be1df4adb8138085b8ec6}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M2\_PWM\_PIN@{M2\_PWM\_PIN}}
+\index{M2\_PWM\_PIN@{M2\_PWM\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M2\_PWM\_PIN}{M2\_PWM\_PIN}}
+{\footnotesize\ttfamily \#define M2\+\_\+\+P\+W\+M\+\_\+\+P\+IN~(9)}
+
+Digital pin used for specfying speed of motor M2. 
+
+Definition at line 171 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}\label{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M3@{M3}}
+\index{M3@{M3}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M3}{M3}}
+{\footnotesize\ttfamily \#define M3~(2)}
+
+Integer value identifying motor M3. 
+
+Definition at line 59 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_aa29ead8f87002b41e0bcaeab69c46e90}\label{_wicked_motor_shield_8h_aa29ead8f87002b41e0bcaeab69c46e90}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M3\_BRAKE\_MASK@{M3\_BRAKE\_MASK}}
+\index{M3\_BRAKE\_MASK@{M3\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M3\_BRAKE\_MASK}{M3\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M3\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x01)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 136 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ac6e59a371c648140c7015ef96c77b654}\label{_wicked_motor_shield_8h_ac6e59a371c648140c7015ef96c77b654}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M3\_DIR\_MASK@{M3\_DIR\_MASK}}
+\index{M3\_DIR\_MASK@{M3\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M3\_DIR\_MASK}{M3\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M3\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x02)}
+
+Shows location of bit for direction status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_ad801d72bd01ef1ac9b86dbf4de0d355d}{M3}} in \mbox{\hyperlink{class_wicked_motor_shield_a8f8978cccce6ed6781a5c0a94a02f5b3}{Wicked\+Motor\+Shield\+::first\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 129 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a95fbfbabeee0b378056994e333d81aa8}\label{_wicked_motor_shield_8h_a95fbfbabeee0b378056994e333d81aa8}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M3\_PWM\_PIN@{M3\_PWM\_PIN}}
+\index{M3\_PWM\_PIN@{M3\_PWM\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M3\_PWM\_PIN}{M3\_PWM\_PIN}}
+{\footnotesize\ttfamily \#define M3\+\_\+\+P\+W\+M\+\_\+\+P\+IN~(5)}
+
+Digital pin used for specifying speed of motor M3. 
+
+Definition at line 175 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}\label{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M4@{M4}}
+\index{M4@{M4}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M4}{M4}}
+{\footnotesize\ttfamily \#define M4~(3)}
+
+Integer value identifying motor M4. 
+
+Definition at line 63 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ae82f21903cccd3df8f31b1b58ee67c59}\label{_wicked_motor_shield_8h_ae82f21903cccd3df8f31b1b58ee67c59}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M4\_BRAKE\_MASK@{M4\_BRAKE\_MASK}}
+\index{M4\_BRAKE\_MASK@{M4\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M4\_BRAKE\_MASK}{M4\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M4\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x40)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}} in Wicked\+Motor\+Shield\+::shift\+\_\+register\+\_\+1.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 87 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a5d8c4230de6e2ceaf74214420833784c}\label{_wicked_motor_shield_8h_a5d8c4230de6e2ceaf74214420833784c}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M4\_DIR\_MASK@{M4\_DIR\_MASK}}
+\index{M4\_DIR\_MASK@{M4\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M4\_DIR\_MASK}{M4\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M4\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x80)}
+
+Shows location of bit for direction status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a9a3433d6613a64df14bf05957ba30837}{M4}} in Wicked\+Motor\+Shield\+::shift\+\_\+register\+\_\+1.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 80 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a4dbaa06d439a3a0ff40b45d86b959584}\label{_wicked_motor_shield_8h_a4dbaa06d439a3a0ff40b45d86b959584}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M4\_PWM\_PIN@{M4\_PWM\_PIN}}
+\index{M4\_PWM\_PIN@{M4\_PWM\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M4\_PWM\_PIN}{M4\_PWM\_PIN}}
+{\footnotesize\ttfamily \#define M4\+\_\+\+P\+W\+M\+\_\+\+P\+IN~(10)}
+
+Digital pin used for specifying speed of motor M4. 
+
+Definition at line 179 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}\label{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M5@{M5}}
+\index{M5@{M5}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M5}{M5}}
+{\footnotesize\ttfamily \#define M5~(4)}
+
+Intger value identifying motor M5. 
+
+Definition at line 67 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a05b8a98760ae81aff795b5385b521a9e}\label{_wicked_motor_shield_8h_a05b8a98760ae81aff795b5385b521a9e}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M5\_BRAKE\_MASK@{M5\_BRAKE\_MASK}}
+\index{M5\_BRAKE\_MASK@{M5\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M5\_BRAKE\_MASK}{M5\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M5\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x10)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}{M5}} in \mbox{\hyperlink{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}{Wicked\+Motor\+Shield\+::second\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 166 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a873b1fb0ac4636aca1a3e15ea3288c12}\label{_wicked_motor_shield_8h_a873b1fb0ac4636aca1a3e15ea3288c12}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M5\_DIR\_MASK@{M5\_DIR\_MASK}}
+\index{M5\_DIR\_MASK@{M5\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M5\_DIR\_MASK}{M5\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M5\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x20)}
+
+Shows location of bit for direction status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_aaae035dfc29e91b0d2b941a446546631}{M5}} in \mbox{\hyperlink{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}{Wicked\+Motor\+Shield\+::second\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 159 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_aefb34c239b0137ef73cc9b5a18809c10}\label{_wicked_motor_shield_8h_aefb34c239b0137ef73cc9b5a18809c10}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M5\_PWM\_PIN@{M5\_PWM\_PIN}}
+\index{M5\_PWM\_PIN@{M5\_PWM\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M5\_PWM\_PIN}{M5\_PWM\_PIN}}
+{\footnotesize\ttfamily \#define M5\+\_\+\+P\+W\+M\+\_\+\+P\+IN~(6)}
+
+Digital pin used for specifying speed of motor M5. 
+
+Definition at line 183 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}\label{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M6@{M6}}
+\index{M6@{M6}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M6}{M6}}
+{\footnotesize\ttfamily \#define M6~(5)}
+
+Integer value identifying motor M6. 
+
+Definition at line 71 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a75f748bbb0d55f55c832246ef7c387c4}\label{_wicked_motor_shield_8h_a75f748bbb0d55f55c832246ef7c387c4}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M6\_BRAKE\_MASK@{M6\_BRAKE\_MASK}}
+\index{M6\_BRAKE\_MASK@{M6\_BRAKE\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M6\_BRAKE\_MASK}{M6\_BRAKE\_MASK}}
+{\footnotesize\ttfamily \#define M6\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK~(0x40)}
+
+Shows location of bit for brake status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}{M6}} in \mbox{\hyperlink{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}{Wicked\+Motor\+Shield\+::second\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 152 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a1adcc8b9c224ed86cafa1ed6a34daf35}\label{_wicked_motor_shield_8h_a1adcc8b9c224ed86cafa1ed6a34daf35}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!M6\_DIR\_MASK@{M6\_DIR\_MASK}}
+\index{M6\_DIR\_MASK@{M6\_DIR\_MASK}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{M6\_DIR\_MASK}{M6\_DIR\_MASK}}
+{\footnotesize\ttfamily \#define M6\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK~(0x80)}
+
+Shows location of bit for direction status of motor \mbox{\hyperlink{_wicked_motor_shield_8h_a3a58ea008b2446f96146735635b03373}{M6}} in \mbox{\hyperlink{class_wicked_motor_shield_a663079e19bde880f77a2c3968afcac5d}{Wicked\+Motor\+Shield\+::second\+\_\+shift\+\_\+register}}.
+
+See \mbox{\hyperlink{_wicked_motor_shield_8h_a80190189c2e1cddf8631505eea9d3196}{M1\+\_\+\+D\+I\+R\+\_\+\+M\+A\+SK}} and \mbox{\hyperlink{_wicked_motor_shield_8h_ab69399f2492111e77b73b134d8d3b4bd}{M1\+\_\+\+B\+R\+A\+K\+E\+\_\+\+M\+A\+SK}} for more information. 
+
+Definition at line 145 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a50eee01a64ad4268daea5d750482551d}\label{_wicked_motor_shield_8h_a50eee01a64ad4268daea5d750482551d}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!OPERATION\_CLEAR@{OPERATION\_CLEAR}}
+\index{OPERATION\_CLEAR@{OPERATION\_CLEAR}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{OPERATION\_CLEAR}{OPERATION\_CLEAR}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+C\+L\+E\+AR~(0)}
+
+
+
+Definition at line 191 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a1d4650e822071c3fce70378585389e46}\label{_wicked_motor_shield_8h_a1d4650e822071c3fce70378585389e46}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!OPERATION\_NONE@{OPERATION\_NONE}}
+\index{OPERATION\_NONE@{OPERATION\_NONE}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{OPERATION\_NONE}{OPERATION\_NONE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+N\+O\+NE~(2)}
+
+
+
+Definition at line 193 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a6985462298d759f9638ad79bda646658}\label{_wicked_motor_shield_8h_a6985462298d759f9638ad79bda646658}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!OPERATION\_SET@{OPERATION\_SET}}
+\index{OPERATION\_SET@{OPERATION\_SET}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{OPERATION\_SET}{OPERATION\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+ET~(1)}
+
+
+
+Definition at line 192 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a565f390ec42eb8a7db196d31becf14a9}\label{_wicked_motor_shield_8h_a565f390ec42eb8a7db196d31becf14a9}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!RCIN1@{RCIN1}}
+\index{RCIN1@{RCIN1}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{RCIN1}{RCIN1}}
+{\footnotesize\ttfamily \#define R\+C\+I\+N1~(1)}
+
+
+
+Definition at line 185 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a1dfc03039b2470c2dd578bda60ee7fba}\label{_wicked_motor_shield_8h_a1dfc03039b2470c2dd578bda60ee7fba}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!RCIN2@{RCIN2}}
+\index{RCIN2@{RCIN2}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{RCIN2}{RCIN2}}
+{\footnotesize\ttfamily \#define R\+C\+I\+N2~(2)}
+
+
+
+Definition at line 186 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_aba3b3ba52d33a415d6664f570814891c}\label{_wicked_motor_shield_8h_aba3b3ba52d33a415d6664f570814891c}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!SERIAL\_CLOCK\_PIN@{SERIAL\_CLOCK\_PIN}}
+\index{SERIAL\_CLOCK\_PIN@{SERIAL\_CLOCK\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_CLOCK\_PIN}{SERIAL\_CLOCK\_PIN}}
+{\footnotesize\ttfamily \#define S\+E\+R\+I\+A\+L\+\_\+\+C\+L\+O\+C\+K\+\_\+\+P\+IN~(2)}
+
+
+
+Definition at line 188 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_a7a57131e103c79d8987697fbcfcb093f}\label{_wicked_motor_shield_8h_a7a57131e103c79d8987697fbcfcb093f}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!SERIAL\_LATCH\_PIN@{SERIAL\_LATCH\_PIN}}
+\index{SERIAL\_LATCH\_PIN@{SERIAL\_LATCH\_PIN}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_LATCH\_PIN}{SERIAL\_LATCH\_PIN}}
+{\footnotesize\ttfamily \#define S\+E\+R\+I\+A\+L\+\_\+\+L\+A\+T\+C\+H\+\_\+\+P\+IN~(7)}
+
+
+
+Definition at line 189 of file Wicked\+Motor\+Shield.\+h.
+
+\mbox{\Hypertarget{_wicked_motor_shield_8h_ac2fbd6bb83288a70e6df2f3903032a1e}\label{_wicked_motor_shield_8h_ac2fbd6bb83288a70e6df2f3903032a1e}} 
+\index{WickedMotorShield.h@{WickedMotorShield.h}!USE\_ALTERNATE\_PINS@{USE\_ALTERNATE\_PINS}}
+\index{USE\_ALTERNATE\_PINS@{USE\_ALTERNATE\_PINS}!WickedMotorShield.h@{WickedMotorShield.h}}
+\doxysubsubsection{\texorpdfstring{USE\_ALTERNATE\_PINS}{USE\_ALTERNATE\_PINS}}
+{\footnotesize\ttfamily \#define U\+S\+E\+\_\+\+A\+L\+T\+E\+R\+N\+A\+T\+E\+\_\+\+P\+I\+NS~(1)}
+
+
+
+Definition at line 195 of file Wicked\+Motor\+Shield.\+h.
+
