@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <charset type="UTF-8">
+      <title>State transitions</title>
+   </head>
+   <body>
+      <h1>State Transitions</h1>
+      <p>The following is taken from    
+         WickedMotorShield::setBrakeData and 
+         WickedMotorShield::setDirectionData.  The
+         following list indicates the states of each
+         motor.  There is already a shadow structure
+         for storing direction bits when changes occur while
+         the brake bit is set.It appears that there should be 
+         shadow storage for the brake information so that
+         that the shift registers don't have to be
+         decoded.
+         </p>
+      <table>
+         <tr><td>Brake Bit</td>
+             <td>Direction Bit<td>
+             <td>Description</td></tr>
+         <tr><td>1</td><td>0</td><td>BRAKE_SOFT</td></tr>
+         <tr><td>1</td><td>1</td><td>BRAKE_HARD</td></tr>
+         <tr><td>0</td><td>0</td><td>DIR_CW</td></tr>
+         <tr><td>0</td><td>1</td><td>DIR_CCW</td></tr>
+      </table>
+      <ul>
+         <li>If going from BRAKE_SOFT or BRAKE_HARD to 
+             DIR_CW or DIR_CCW, set brake bit to 0 and load
+             direction bit from old_dir.</li>
+         <li>If setting direction while BRAKE_SOFT or
+             BRAKE_HARD, put direction in old_dir but leave
+             brake and direction bits unchanged.</li>
+         <li>If going from DIR_CW or DIR_CCW to BRAKE_SOFT
+             or BRAKE_HARD from, load current 
+             direction bit
+             into old_dir.</li>
+         <li>If going from BRAKE_HARD to BRAKE_SOFT or vice 
+             versa, change brake and direction bits, but not
+             old_dir.</li>
+         <li>If going from DIR_CW to DOR_CCW or vice versa, load
+             new direction value to direction bit and old_dir.  
+             Brake bit can be either set to zero or 
+             left unchanged.  (It is zero in both initial and
+             final states.</li>
+      </ul>
+      <hr />
+      <p><a href="index.html">Return to main page</a></p>
+   </body>
+</html>
